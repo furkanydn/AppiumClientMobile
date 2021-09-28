@@ -6,7 +6,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using System;
 using System.Diagnostics;
-using System.Threading;
 
 namespace AppiumClientMobile.test.Android
 {
@@ -46,9 +45,14 @@ namespace AppiumClientMobile.test.Android
             _driver.FindElementByAccessibilityId("login_phone_number").SendKeys(number);
         }
 
-        private void SetImplicitWaitTimeoutWithDesiredValueSeconds(int number)
+        private void SetImplicitWaitTimeoutWithDesiredValueSeconds(double waitTime)
         {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(number);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitTime);
+        }
+
+        private void SetPageLoadTimeoutWithDesiredValueSeconds(double waitTime)
+        {
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(waitTime);
         }
 
         [Test, Order(0)]
@@ -96,7 +100,7 @@ namespace AppiumClientMobile.test.Android
         {
             SetImplicitWaitTimeoutWithDesiredValueSeconds(5);
             _driver.FindElementByAccessibilityId("login_otp_retry").Click();
-            Thread.Sleep(3 * 60 * 1000); // Wait 3 Minute For Re-Otp
+            SetPageLoadTimeoutWithDesiredValueSeconds(180); // Wait 3 Minute For Re-Otp
             CheckAbilityToEnterNumberScreen();
         }
 
