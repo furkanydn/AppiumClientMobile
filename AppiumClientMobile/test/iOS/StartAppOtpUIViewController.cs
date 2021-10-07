@@ -15,13 +15,12 @@ namespace AppiumClientMobile.test.iOS
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            var capabilities = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
+            var capabilities = Caps.GetIosXcuiTestCapsWithAppPackage();
             var serverUri = AppiumServers.StartLocalService();
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(25);
             _driver.LaunchApp();
         }
-
-
+        
         public StartAppOtpUIViewController()
         {
             

@@ -6,7 +6,7 @@ namespace AppiumClientMobile.Enums
 {
     public class GeneralDesiredCaps
     {
-        public static string AppNameIos = "motivistv5.ipa";
+        public static string AppNameIos = "Motivist.app.zip";
 
         public static readonly string AppPathAndroid =
             @"C:\Users\FurkanAYDIN\source\repos\AppiumClientMobile\AppiumClientMobile\Resources\motivistv5.apk";
@@ -25,10 +25,10 @@ namespace AppiumClientMobile.Enums
         public static readonly string PlatformNameIos = "iOS";
 
         public static readonly string PlatformVersionAndroid = "8.1";
-        public static readonly string PlatformVersionIos = "12.5.5";
+        public static readonly string PlatformVersionIos = "15";
 
         public static readonly string DeviceNameAndroid = "Pixel3";
-        public static readonly string DeviceNameIos = "iPhone X";
+        public static readonly string DeviceNameIos = "iPhone 11";
 
         public static readonly string OrientationPortrait = "PORTRAIT";
         public static readonly string OrientationLandscape = "LANDSCAPE";

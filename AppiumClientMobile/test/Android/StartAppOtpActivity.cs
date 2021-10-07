@@ -50,11 +50,6 @@ namespace AppiumClientMobile.test.Android
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitTime);
         }
 
-        private void SetPageLoadTimeoutWithDesiredValueSeconds(double waitTime)
-        {
-            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(waitTime);
-        }
-
         [Test, Order(0)]
         public void CheckAbilityToEnterNumberScreen()
         {
@@ -65,7 +60,7 @@ namespace AppiumClientMobile.test.Android
             SendPhoneNumberToRequiredField("5551234567");
 
             // Verify
-            var loginPhoneNumberGetText = _driver.FindElementByAccessibilityId("login_phone_number").Text;
+            var loginPhoneNumberGetText = _driver.FindElementByAccessibilityId(" ").Text;
             Assert.AreEqual("(555) 123 45 67", loginPhoneNumberGetText);
 
             // Login Button Click
@@ -99,8 +94,15 @@ namespace AppiumClientMobile.test.Android
         public void CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry()
         {
             SetImplicitWaitTimeoutWithDesiredValueSeconds(5);
-            _driver.FindElementByAccessibilityId("login_otp_retry").Click();
-            SetPageLoadTimeoutWithDesiredValueSeconds(180); // Wait 3 Minute For Re-Otp
+            try
+            { 
+                _driver.FindElementByAccessibilityId("login_otp_retry").Click();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
             CheckAbilityToEnterNumberScreen();
         }
 
@@ -120,6 +122,7 @@ namespace AppiumClientMobile.test.Android
                 "//android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText").Text);
 
             _driver.FindElementByAccessibilityId("login_otp_verify").Click();
+
         }
     }
 }

@@ -1,16 +1,16 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Enums;
 using AppiumClientMobile.Enums;
-using AutomationName = OpenQA.Selenium.Appium.Enums.AutomationName;
+using AutomationName = AppiumClientMobile.Enums.AutomationName;
 
 namespace AppiumClientMobile.helpers
 {
-    public class Caps
+    public static class Caps
     {
         public static AppiumOptions GetAndroidUiAutomatorCaps(string app)
         {
             var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUIAutomator2);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUiAutomator2);
             capabilities.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android Emulator");
             capabilities.AddAdditionalCapability(MobileCapabilityType.App, app);
 
@@ -37,14 +37,31 @@ namespace AppiumClientMobile.helpers
             return capabilities;
         }
 
-        public static AppiumOptions GetIosXCUITestCaps(string app)
+        public static AppiumOptions GetIosXcuiTestCaps(string app)
         {
             var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.iOSXcuiTest);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.DeviceName, "iPhone X");
-            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "12.0");
+            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformName, GeneralDesiredCaps.PlatformNameIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, GeneralDesiredCaps.PlatformVersionIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.DeviceName, GeneralDesiredCaps.DeviceNameIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.XCUITest);
             capabilities.AddAdditionalCapability(MobileCapabilityType.App, app);
-            capabilities.AddAdditionalCapability(IOSMobileCapabilityType.LaunchTimeout, Env.InitTimeOutSec.TotalMilliseconds);
+            capabilities.AddAdditionalCapability(IOSMobileCapabilityType.LaunchTimeout,
+                Env.InitTimeOutSec.TotalMilliseconds);
+
+            return capabilities;
+        }
+        
+        public static AppiumOptions GetIosXcuiTestCapsWithAppPackage()
+        {
+            var capabilities = new AppiumOptions();
+            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformName, GeneralDesiredCaps.PlatformNameIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, GeneralDesiredCaps.PlatformVersionIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.DeviceName, GeneralDesiredCaps.DeviceNameIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.XCUITest);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.App,GeneralDesiredCaps.AppPathIos);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.Orientation, GeneralDesiredCaps.OrientationPortrait);
+            capabilities.AddAdditionalCapability(IOSMobileCapabilityType.LaunchTimeout,
+                Env.InitTimeOutSec.TotalMilliseconds);
 
             return capabilities;
         }

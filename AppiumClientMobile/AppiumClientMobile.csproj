@@ -38,6 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="test\iOS\" />
-    <Folder Include="test\iOS\Device\" />
+    <Folder Include="test\iOS\Device" />
   </ItemGroup>
 </Project>
