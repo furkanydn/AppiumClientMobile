@@ -32,4 +32,12 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="test\iOS\" />
+    <None Remove="test\iOS\Device\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="test\iOS\" />
+    <Folder Include="test\iOS\Device\" />
+  </ItemGroup>
 </Project>

@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using AppiumClientMobile.Enums;
-using AppiumClientMobile.Properties;
 using AutomationName = OpenQA.Selenium.Appium.Enums.AutomationName;
 
 namespace AppiumClientMobile.helpers
@@ -41,7 +37,7 @@ namespace AppiumClientMobile.helpers
             return capabilities;
         }
 
-        public static AppiumOptions GetIosCaps(string app)
+        public static AppiumOptions GetIosXCUITestCaps(string app)
         {
             var capabilities = new AppiumOptions();
             capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.iOSXcuiTest);

@@ -9,7 +9,7 @@ namespace AppiumClientMobile.Enums
         public static readonly string Appium = "Appium";
         public static readonly string AndroidUIAutomator2 = "UIAutomator2";
         public static readonly string Selendrid = "Selendroid";
-        public static readonly string iOSXcuiTest = "XCuiTest";
+        public static readonly string XCUITest = "XCUITest";
         public static readonly string AndroidEspresso = "Espresso";
     }
 }
