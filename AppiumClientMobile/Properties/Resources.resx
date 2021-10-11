@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="motivistv5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\motivistv5.apk;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\Motivist.apk;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="PathToLinuxNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\helpers\PathToLinuxNode;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -138,5 +138,14 @@
   </data>
   <data name="StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__" xml:space="preserve">
     <value>Halen Beklenilmesi Gereken Üç Dakika Sınırı Var!</value>
+  </data>
+  <data name="CheckIfAppInstalled_IsInstalledMessage__" xml:space="preserve">
+    <value>Uygulama Doğru Bir Şekilde Yüklenmedi.</value>
+  </data>
+  <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage" xml:space="preserve">
+    <value>"Received OTP Code: "</value>
+  </data>
+  <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_UnknownErrorMessage" xml:space="preserve">
+    <value>An unknown error has occurred please contact the Inooster !</value>
   </data>
 </root>

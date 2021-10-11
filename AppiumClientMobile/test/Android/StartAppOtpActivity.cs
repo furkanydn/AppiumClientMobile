@@ -1,11 +1,12 @@
 ﻿using AppiumClientMobile.helpers;
 using AppiumClientMobile.Helpers;
-using AppiumClientMobile.Properties;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using System;
 using System.Diagnostics;
+using static AppiumClientMobile.Properties.AccessibilityIds;
+using static AppiumClientMobile.Properties.Resources;
 
 namespace AppiumClientMobile.test.Android
 {
@@ -41,8 +42,10 @@ namespace AppiumClientMobile.test.Android
         // Methods
         private static void SendPhoneNumberToRequiredField(string number)
         {
-            _driver.FindElementByAccessibilityId("login_phone_number").Click();
-            _driver.FindElementByAccessibilityId("login_phone_number").SendKeys(number);
+            _driver.FindElementByAccessibilityId(StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .Click();
+            _driver.FindElementByAccessibilityId(StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .SendKeys(number);
         }
 
         private void SetImplicitWaitTimeoutWithDesiredValueSeconds(double waitTime)
@@ -54,39 +57,58 @@ namespace AppiumClientMobile.test.Android
         public void CheckAbilityToEnterNumberScreen()
         {
             string currentActivity = _driver.CurrentActivity;
-            Debug.Print(Resources.StartAppOtpActivity_CheckAbilityToEnterNumberScreen_Current_Activity__ +
+            Debug.Print(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_Current_Activity__ +
                         currentActivity);
             // Activate
-            SendPhoneNumberToRequiredField("5551234567");
+            SendPhoneNumberToRequiredField(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_PhoneNumber);
 
             // Verify
-            var loginPhoneNumberGetText = _driver.FindElementByAccessibilityId(" ").Text;
-            Assert.AreEqual("(555) 123 45 67", loginPhoneNumberGetText);
+            var loginPhoneNumberGetText = _driver
+                .FindElementByAccessibilityId(StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .Text;
+            Assert.AreEqual(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber,
+                loginPhoneNumberGetText);
 
             // Login Button Click
-            _driver.FindElementByAccessibilityId("login_button").Click();
+            _driver.FindElementByAccessibilityId(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_LoginButton).Click();
         }
 
         [Test, Order(1)]
         public void CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage ()
         {
-            if (_driver.FindElementByXPath("//android.view.ViewGroup[1]/android.widget.TextView[2]").Displayed)
+            if (_driver.FindElementByXPath(
+                StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTextView).Displayed)
             {
-                var otpCode = _driver.FindElementByXPath("//android.view.ViewGroup[1]/android.widget.TextView[2]")
+                var otpCode = _driver
+                    .FindElementByXPath(
+                        StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTextView)
                     .Text;
-                Debug.WriteLine("Received OTP Code: ", otpCode);
-                _driver.FindElementByAccessibilityId("dialog_negative_button").Click();
+                Debug.WriteLine(
+                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
+                    otpCode);
+                _driver.FindElementByAccessibilityId(
+                        StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_DialogNegativeButton)
+                    .Click();
             }
-            else if (_driver.FindElementByXPath("//*[@text=\"Bir hata ile karşılaşıldı.\"]").Displayed)
+            else if (_driver
+                .FindElementByXPath(
+                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorMessageText)
+                .Displayed)
             {
                 // If it gets an error before going to the otp screen and the elements there are not visible, it will enter here.
-                _driver.FindElementByAccessibilityId("dialog_negative_button").Click();
-                Assert.IsTrue(_driver.FindElementByXPath("//*[@text=\"Bir hata ile karşılaşıldı.\"]").Displayed,
-                    Resources.StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__);
+                _driver.FindElementByAccessibilityId(
+                        StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_DialogNegativeButton)
+                    .Click();
+                Assert.IsTrue(
+                    _driver.FindElementByXPath(
+                            StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorMessageText)
+                        .Displayed,
+                    StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__);
             }
             else
             {
-                Debug.WriteLine("An unknown error has occurred please contact the Inooster !");
+                Debug.WriteLine(
+                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_UnknownErrorMessage);
             }
         }
 
@@ -96,7 +118,9 @@ namespace AppiumClientMobile.test.Android
             SetImplicitWaitTimeoutWithDesiredValueSeconds(5);
             try
             { 
-                _driver.FindElementByAccessibilityId("login_otp_retry").Click();
+                _driver.FindElementByAccessibilityId(
+                        StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton)
+                    .Click();
             }
             catch (Exception e)
             {
@@ -110,18 +134,23 @@ namespace AppiumClientMobile.test.Android
         public void CheckAbilityToOtpEnterOtpCodeScreen()
         {
             // Get Otp Code And Close Dialog
-            string otpCode = _driver.FindElementByXPath("//android.view.ViewGroup[1]/android.widget.TextView[2]").Text;
-            _driver.FindElementByAccessibilityId("dialog_negative_button").Click();
+            string otpCode = _driver
+                .FindElementByXPath(
+                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTextView).Text;
+            _driver.FindElementByAccessibilityId(
+                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_DialogNegativeButton)
+                .Click();
             
             // Set Otp Code And Go Main Screen
-            _driver.FindElementByXPath(
-                "//android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText").SendKeys(otpCode);
+            _driver.FindElementByXPath(StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText)
+                .SendKeys(otpCode);
 
             // If the incoming otp code and the entered otp code are different, the status here is checked.
             Assert.AreEqual(otpCode, _driver.FindElementByXPath(
-                "//android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText").Text);
+                StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText).Text);
 
-            _driver.FindElementByAccessibilityId("login_otp_verify").Click();
+            _driver.FindElementByAccessibilityId(StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
+                .Click();
 
         }
     }

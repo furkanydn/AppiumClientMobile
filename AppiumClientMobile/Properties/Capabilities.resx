@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="GeneralCapabilities_Android_PlatformVersion" xml:space="preserve">
+    <value>8.1</value>
+  </data>
+    <data name="GeneralCapabilities_Android_DeviceName" xml:space="preserve">
+    <value>Pixel3</value>
+  </data>
+    <data name="GeneralCapabilities_Ios_DeviceName" xml:space="preserve">
+    <value>iPhone 11</value>
+  </data>
+    <data name="GeneralCapabilities_AnyDevice_OrientationPortrait" xml:space="preserve">
+    <value>PORTRAIT</value>
+  </data>
+    <data name="GeneralCapabilities_AnyDevice_OrientationLandscape" xml:space="preserve">
+    <value>LANDSCAPE</value>
+  </data>
+    <data name="GeneralCapabilities_Android_PlatformName" xml:space="preserve">
+    <value>Android</value>
+  </data>
+    <data name="GeneralCapabilities_Ios_PlatformName" xml:space="preserve">
+    <value>iOS</value>
+  </data>
+    <data name="GeneralCapabilities_Ios_PlatformVersion" xml:space="preserve">
+        <value>15.0</value>
+    </data>
+    <data name="GeneralCapabilities_Ios_AppPath_OnMac" xml:space="preserve">
+        <value>@"/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/Resources/Motivist.app.zip"</value>
+    </data>
+    <data name="GeneralCapabilities_Android_AppPath_OnMac" xml:space="preserve">
+        <value>@"/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/Resources/Motivist.apk"</value>
+    </data>
+    <data name="GeneralCapabilities_Android_AppPackageName" xml:space="preserve">
+        <value>com.motivist.development</value>
+    </data>
+    <data name="GeneralCapabilities_Android_AppWaitActivity" xml:space="preserve">
+        <value>*</value>
+    </data>
+</root>

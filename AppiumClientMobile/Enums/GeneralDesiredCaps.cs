@@ -1,36 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using static AppiumClientMobile.Properties.Capabilities;
 
 namespace AppiumClientMobile.Enums
 {
-    public class GeneralDesiredCaps
+    public static class GeneralDesiredCaps
     {
-        public static string AppNameIos = "Motivist.app.zip";
-
         public static readonly string AppPathAndroid =
             @"C:\Users\FurkanAYDIN\source\repos\AppiumClientMobile\AppiumClientMobile\Resources\motivistv5.apk";
-           // Path.Combine(Environment.CurrentDirectory, @"Resources\", AppNameAndroid);
-        public static readonly string AppPathIos =
-            Path.Combine(Environment.CurrentDirectory, @"Resources\", AppNameIos);
-
-        public static readonly string AppPackage = "com.motivist.development";
-
-        public static readonly string AppWaitActivity = "*";
-
+        
+        // Since the paths of the application packages on the Mac side are different, it will be continued like this for now.
+        public static readonly string AppPathAndroidMac = GeneralCapabilities_Android_AppPath_OnMac;
+        public static readonly string AppPathIosMac = GeneralCapabilities_Ios_AppPath_OnMac;
+        public static readonly string AppPackage = GeneralCapabilities_Android_AppPackageName;
+        public static readonly string AppWaitActivity = GeneralCapabilities_Android_AppWaitActivity; // Don't Change This !
+        public static readonly string PlatformNameAndroid = GeneralCapabilities_Android_PlatformName;
+        public static readonly string PlatformNameIos = GeneralCapabilities_Ios_PlatformName;
+        public static readonly string PlatformVersionAndroid = GeneralCapabilities_Android_PlatformVersion;
+        public static readonly string PlatformVersionIos = GeneralCapabilities_Ios_PlatformVersion;
+        public static readonly string DeviceNameAndroid = GeneralCapabilities_Android_DeviceName;
+        public static readonly string DeviceNameIos = GeneralCapabilities_Ios_DeviceName;
+        public static readonly string OrientationPortrait = GeneralCapabilities_AnyDevice_OrientationPortrait;
+        public static readonly string OrientationLandscape = GeneralCapabilities_AnyDevice_OrientationLandscape;
+        
+        
         public static readonly bool NoReset = true;
         public static readonly bool FullReset = false;
-
-        public static readonly string PlatformNameAndroid = "Android";
-        public static readonly string PlatformNameIos = "iOS";
-
-        public static readonly string PlatformVersionAndroid = "8.1";
-        public static readonly string PlatformVersionIos = "15";
-
-        public static readonly string DeviceNameAndroid = "Pixel3";
-        public static readonly string DeviceNameIos = "iPhone 11";
-
-        public static readonly string OrientationPortrait = "PORTRAIT";
-        public static readonly string OrientationLandscape = "LANDSCAPE";
     }
 }

@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium.Appium.Service;
 using System;
 using System.IO;
-using System.Diagnostics;
 using AppiumClientMobile.helpers;
 
 namespace AppiumClientMobile.Helpers

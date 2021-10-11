@@ -4255,7 +4255,7 @@
       "outputPath": "/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/furkanaydin/.config/NuGet/NuGet.Config"
+        "/Users/furkanaydin/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -4327,7 +4327,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }

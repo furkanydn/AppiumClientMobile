@@ -7,6 +7,7 @@ namespace AppiumClientMobile.helpers
 {
     public class Apps
     {
+        
         private static bool _isInited;
         private static Dictionary<string, string> _testApps;
 

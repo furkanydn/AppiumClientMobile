@@ -1,22 +1,28 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b965701b_002D9c1c_002D4147_002D919f_002Dfafaff6e79d6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="StartAppOtpActivity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Android.StartAppOtpActivity&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b965701b_002D9c1c_002D4147_002D919f_002Dfafaff6e79d6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="StartAppOtpActivity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Android.StartAppOtpActivity&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.iOS.Device.CheckAbilityToIsAppInstalled&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FAccessibilityIds/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FCapabilities/@EntryIndexedValue">False</s:Boolean>
 	
 	
 	
 	
 	
 	
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyErrors/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyStringResources/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Automator/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Beklenilmesi/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=chromedriver/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=cpuinfo/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Dakika/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=furkanaydin/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Gereken/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Halen/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=hata/@EntryIndexedValue">True</s:Boolean>
@@ -25,4 +31,5 @@
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=kar_015F_0131la_015F_0131ld_0131/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=motivist/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=motivistv/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UserDictionary/Words/=S_0131n_0131r_0131/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=S_0131n_0131r_0131/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Uygulama/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
