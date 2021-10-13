@@ -1,7 +1,8 @@
-﻿using OpenQA.Selenium.Appium.Service;
-using System;
+﻿using System;
 using System.IO;
 using AppiumClientMobile.helpers;
+using AppiumClientMobile.Properties;
+using OpenQA.Selenium.Appium.Service;
 
 namespace AppiumClientMobile.Helpers
 {
@@ -57,7 +58,7 @@ namespace AppiumClientMobile.Helpers
 
         public static Uri StartLocalService()
         {
-            var localServerUri = new Uri("http://localhost:4723/wd/hub");
+            var localServerUri = new Uri(Resources.Helpers_AppiumServers_ServerAddress);
             return localServerUri;
         }
     }

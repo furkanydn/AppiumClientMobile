@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Diagnostics;
 using AppiumClientMobile.helpers;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.iOS;
+using OpenQA.Selenium.Support.UI;
+using static AppiumClientMobile.Properties.AccessibilityIds;
+using static AppiumClientMobile.Properties.Resources;
 
 namespace AppiumClientMobile.test.iOS
 {
@@ -37,10 +41,20 @@ namespace AppiumClientMobile.test.iOS
             //_driver.ResetApp();
         }
 
+        
         [Test, Order(0)]
         public void CheckAbilityToEnterNumberView()
         {
-            //string currentViewController = _driver.
+            // iOS tarafında ilk açılışta Alerts izinine evet olarak işaretliyoruz!
+            _driver.FindElementByAccessibilityId(StartAppOtpUIViewController_Allow).Click();
+            
+            // Activate
+            _driver.FindElementByAccessibilityId(
+                OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_).Click();
+            _driver
+                .FindElementByAccessibilityId(
+                    OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .SendKeys(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_PhoneNumber);
         }
     }
 }

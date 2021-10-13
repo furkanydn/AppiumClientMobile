@@ -1,7 +1,8 @@
 ﻿using AppiumClientMobile.Enums;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Enums;
-using static AppiumClientMobile.Enums.GeneralDesiredCaps;
+
+using static OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType;
 using static OpenQA.Selenium.Appium.Enums.MobileCapabilityType;
 using AutomationName = AppiumClientMobile.Enums.AutomationName;
 
@@ -23,14 +24,14 @@ namespace AppiumClientMobile.helpers
         {
             var capabilities = new AppiumOptions();
 
-            capabilities.AddAdditionalCapability(App, AppPathAndroid);
+            capabilities.AddAdditionalCapability(App, GeneralDesiredCaps.AppPathAndroid);
             capabilities.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, GeneralDesiredCaps.AppPackage);
             capabilities.AddAdditionalCapability(AndroidMobileCapabilityType.AppWaitActivity, GeneralDesiredCaps.AppWaitActivity);
 
-            capabilities.AddAdditionalCapability(PlatformName, PlatformNameAndroid);
-            capabilities.AddAdditionalCapability(PlatformVersion, PlatformVersionAndroid);
-            capabilities.AddAdditionalCapability(DeviceName, DeviceNameAndroid);
-            capabilities.AddAdditionalCapability(Orientation, OrientationPortrait);
+            capabilities.AddAdditionalCapability(PlatformName, GeneralDesiredCaps.PlatformNameAndroid);
+            capabilities.AddAdditionalCapability(PlatformVersion, GeneralDesiredCaps.PlatformVersionAndroid);
+            capabilities.AddAdditionalCapability(DeviceName, GeneralDesiredCaps.DeviceNameAndroid);
+            capabilities.AddAdditionalCapability(Orientation, GeneralDesiredCaps.OrientationPortrait);
             // ReSharper disable once HeapView.BoxingAllocation
             capabilities.AddAdditionalCapability(MobileCapabilityType.NoReset, GeneralDesiredCaps.NoReset);
             // ReSharper disable once HeapView.BoxingAllocation
@@ -42,12 +43,12 @@ namespace AppiumClientMobile.helpers
         public static AppiumOptions GetIosXcuiTestCaps(string app)
         {
             var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(PlatformName, PlatformNameIos);
-            capabilities.AddAdditionalCapability(PlatformVersion, PlatformVersionIos);
-            capabilities.AddAdditionalCapability(DeviceName, DeviceNameIos);
+            capabilities.AddAdditionalCapability(PlatformName, GeneralDesiredCaps.PlatformNameIos);
+            capabilities.AddAdditionalCapability(PlatformVersion, GeneralDesiredCaps.PlatformVersionIos);
+            capabilities.AddAdditionalCapability(DeviceName, GeneralDesiredCaps.DeviceNameIos);
             capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.XCUITest);
             capabilities.AddAdditionalCapability(App, app);
-            capabilities.AddAdditionalCapability(IOSMobileCapabilityType.LaunchTimeout,
+            capabilities.AddAdditionalCapability(LaunchTimeout,
                 Env.InitTimeOutSec.TotalMilliseconds);
 
             return capabilities;
@@ -56,13 +57,13 @@ namespace AppiumClientMobile.helpers
         public static AppiumOptions GetIosXcuiTestCapsWithAppPackage()
         {
             var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(PlatformName, PlatformNameIos);
-            capabilities.AddAdditionalCapability(PlatformVersion, PlatformVersionIos);
-            capabilities.AddAdditionalCapability(DeviceName, DeviceNameIos);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.XCUITest);
-            capabilities.AddAdditionalCapability(App,AppPathIosMac);
-            capabilities.AddAdditionalCapability(Orientation, OrientationPortrait);
-            capabilities.AddAdditionalCapability(IOSMobileCapabilityType.LaunchTimeout,
+            capabilities.AddAdditionalCapability("platformName", GeneralDesiredCaps.PlatformNameIos);
+            capabilities.AddAdditionalCapability("appium:platformVersion", GeneralDesiredCaps.PlatformVersionIos);
+            capabilities.AddAdditionalCapability("appium:deviceName", GeneralDesiredCaps.DeviceNameIos);
+            capabilities.AddAdditionalCapability("appium:automationName", "XCUITest");
+            capabilities.AddAdditionalCapability("appium:app",GeneralDesiredCaps.AppPathIosMac);
+            capabilities.AddAdditionalCapability("appium:wdaBaseUrl",GeneralDesiredCaps.WdaBaseUrl);
+            capabilities.AddAdditionalCapability(LaunchTimeout,
                 Env.InitTimeOutSec.TotalMilliseconds);
 
             return capabilities;

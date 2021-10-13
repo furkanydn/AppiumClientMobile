@@ -18,34 +18,37 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_" xml:space="preserve">
-        <value>"login_phone_number"</value>
+    <data name="OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_" xml:space="preserve">
+        <value>login_phone_number</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_PhoneNumber" xml:space="preserve">
-        <value>"5551234567"</value>
+        <value>5551234567</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber" xml:space="preserve">
-        <value>"(555) 123 45 67"</value>
+        <value>(555) 123 45 67</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_LoginButton" xml:space="preserve">
-        <value>"login_button"</value>
+        <value>login_button</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTextView" xml:space="preserve">
-        <value>"//android.view.ViewGroup[1]/android.widget.TextView[2]"</value>
+        <value>//android.view.ViewGroup[1]/android.widget.TextView[2]</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_DialogNegativeButton" xml:space="preserve">
-        <value>"dialog_negative_button"</value>
+        <value>dialog_negative_button</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorMessageText" xml:space="preserve">
-        <value>"//*[@text=\"Bir hata ile karşılaşıldı.\"]"</value>
+        <value>//*[@text=\"Bir hata ile karşılaşıldı.\"]</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton" xml:space="preserve">
-        <value>"login_otp_retry"</value>
+        <value>login_otp_retry</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText" xml:space="preserve">
-        <value>"//android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText"</value>
+        <value>//android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify" xml:space="preserve">
-        <value>"login_otp_verify"</value>
+        <value>login_otp_verify</value>
+    </data>
+    <data name="StartAppOtpUIViewController_Allow" xml:space="preserve">
+        <value>Allow</value>
     </data>
 </root>

@@ -45,9 +45,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_ {
+        internal static string OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_ {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_", resourceCulture);
+                return ResourceManager.GetString("OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_", resourceCulture);
             }
         }
         
@@ -106,6 +106,12 @@ namespace AppiumClientMobile.Properties {
         internal static string StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify {
             get {
                 return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify", resourceCulture);
+            }
+        }
+        
+        internal static string StartAppOtpUIViewController_Allow {
+            get {
+                return ResourceManager.GetString("StartAppOtpUIViewController_Allow", resourceCulture);
             }
         }
     }

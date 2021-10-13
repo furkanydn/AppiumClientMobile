@@ -19,10 +19,11 @@ namespace AppiumClientMobile.Enums
         public static readonly string DeviceNameAndroid = GeneralCapabilities_Android_DeviceName;
         public static readonly string DeviceNameIos = GeneralCapabilities_Ios_DeviceName;
         public static readonly string OrientationPortrait = GeneralCapabilities_AnyDevice_OrientationPortrait;
-        public static readonly string OrientationLandscape = GeneralCapabilities_AnyDevice_OrientationLandscape;
-        
-        
+
         public static readonly bool NoReset = true;
         public static readonly bool FullReset = false;
+
+        // iOS tarafındaki hataların çözümü olarak dışarıdan ekleme yapılmıştır.
+        public static readonly string WdaBaseUrl = GeneralCapabilities_Ios_WdaBaseUrl;
     }
 }

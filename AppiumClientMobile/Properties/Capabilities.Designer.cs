@@ -116,5 +116,11 @@ namespace AppiumClientMobile.Properties {
                 return ResourceManager.GetString("GeneralCapabilities_Android_AppWaitActivity", resourceCulture);
             }
         }
+        
+        internal static string GeneralCapabilities_Ios_WdaBaseUrl {
+            get {
+                return ResourceManager.GetString("GeneralCapabilities_Ios_WdaBaseUrl", resourceCulture);
+            }
+        }
     }
 }

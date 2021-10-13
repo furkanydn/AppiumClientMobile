@@ -1,8 +1,5 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Appium.Service;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using OpenQA.Selenium;
 
 namespace AppiumClientMobile.helpers
 {
@@ -14,7 +11,7 @@ namespace AppiumClientMobile.helpers
             {
                 if (els[i].GetAttribute("name") == name)
                 {
-                    return (TW)els[i];
+                    return els[i];
                 }
             }
             return null;

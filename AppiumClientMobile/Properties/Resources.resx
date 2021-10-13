@@ -148,4 +148,10 @@
   <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_UnknownErrorMessage" xml:space="preserve">
     <value>An unknown error has occurred please contact the Inooster !</value>
   </data>
+  <data name="Helpers_AppiumServers_ServerAddress" xml:space="preserve">
+    <value>http://127.0.0.1:4723/wd/hub</value>
+  </data>
+  <data name="StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle" xml:space="preserve">
+    <value>"Current WindowHandle: "</value>
+  </data>
 </root>

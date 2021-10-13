@@ -6,10 +6,11 @@ namespace AppiumClientMobile.Enums
 {
     public sealed class AutomationName
     {
-        public static readonly string Appium = "Appium";
-        public static readonly string AndroidUiAutomator2 = "UIAutomator2";
-        public static readonly string Selendrid = "Selendroid";
-        public static readonly string XCUITest = "XCUITest";
-        public static readonly string AndroidEspresso = "Espresso";
+        public static string Appium = "Appium";
+        public static string AndroidUiAutomator2 = "UIAutomator2";
+        public static string Selendrid = "Selendroid";
+        // ReSharper disable once StaticMemberInitializerReferesToMemberBelow
+        public static object XCUITest = XCUITest;
+        public static string AndroidEspresso = "Espresso";
     }
 }

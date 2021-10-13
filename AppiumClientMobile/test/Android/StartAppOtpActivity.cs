@@ -42,9 +42,9 @@ namespace AppiumClientMobile.test.Android
         // Methods
         private static void SendPhoneNumberToRequiredField(string number)
         {
-            _driver.FindElementByAccessibilityId(StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
                 .Click();
-            _driver.FindElementByAccessibilityId(StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
                 .SendKeys(number);
         }
 
@@ -64,7 +64,7 @@ namespace AppiumClientMobile.test.Android
 
             // Verify
             var loginPhoneNumberGetText = _driver
-                .FindElementByAccessibilityId(StartAppOtpActivity_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
                 .Text;
             Assert.AreEqual(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber,
                 loginPhoneNumberGetText);

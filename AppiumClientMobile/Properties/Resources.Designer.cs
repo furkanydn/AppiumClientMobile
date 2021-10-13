@@ -110,5 +110,17 @@ namespace AppiumClientMobile.Properties {
                         "nErrorMessage", resourceCulture);
             }
         }
+        
+        public static string Helpers_AppiumServers_ServerAddress {
+            get {
+                return ResourceManager.GetString("Helpers_AppiumServers_ServerAddress", resourceCulture);
+            }
+        }
+        
+        public static string StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle {
+            get {
+                return ResourceManager.GetString("StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle", resourceCulture);
+            }
+        }
     }
 }
