@@ -55,6 +55,9 @@
         <value>*</value>
     </data>
     <data name="GeneralCapabilities_Ios_WdaBaseUrl" xml:space="preserve">
-        <value>http://192.168.1.28</value>
+        <value>http://192.168.137.51</value>
+    </data>
+    <data name="GeneralCapabilities_Ios_BundleId" xml:space="preserve">
+        <value>com.Motivist.Dev</value>
     </data>
 </root>

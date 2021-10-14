@@ -6,7 +6,7 @@ using OpenQA.Selenium.Appium.Service;
 
 namespace AppiumClientMobile.Helpers
 {
-    public class AppiumServers
+    internal static class AppiumServers
     {
         private static AppiumLocalService _localService;
         private static Uri _remoteAppiumServerUri;

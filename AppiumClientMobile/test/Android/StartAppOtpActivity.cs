@@ -12,7 +12,7 @@ namespace AppiumClientMobile.test.Android
 {
     public class StartAppOtpActivity
     {
-        static AndroidDriver<IWebElement> _driver;
+        private static AndroidDriver<IWebElement> _driver;
 
         [OneTimeSetUp]
         public void BeforeAll()
@@ -70,7 +70,7 @@ namespace AppiumClientMobile.test.Android
                 loginPhoneNumberGetText);
 
             // Login Button Click
-            _driver.FindElementByAccessibilityId(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_LoginButton).Click();
+            _driver.FindElementByAccessibilityId(OtpPage_CheckAbilityToEnterNumberScreen_LoginButton).Click();
         }
 
         [Test, Order(1)]

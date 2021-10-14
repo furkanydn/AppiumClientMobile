@@ -122,5 +122,11 @@ namespace AppiumClientMobile.Properties {
                 return ResourceManager.GetString("GeneralCapabilities_Ios_WdaBaseUrl", resourceCulture);
             }
         }
+        
+        internal static string GeneralCapabilities_Ios_BundleId {
+            get {
+                return ResourceManager.GetString("GeneralCapabilities_Ios_BundleId", resourceCulture);
+            }
+        }
     }
 }

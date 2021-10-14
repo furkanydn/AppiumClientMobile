@@ -63,9 +63,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToEnterNumberScreen_LoginButton {
+        internal static string OtpPage_CheckAbilityToEnterNumberScreen_LoginButton {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToEnterNumberScreen_LoginButton", resourceCulture);
+                return ResourceManager.GetString("OtpPage_CheckAbilityToEnterNumberScreen_LoginButton", resourceCulture);
             }
         }
         

@@ -1,10 +1,9 @@
 ﻿using AppiumClientMobile.Enums;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Enums;
-
 using static OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType;
 using static OpenQA.Selenium.Appium.Enums.MobileCapabilityType;
-using AutomationName = AppiumClientMobile.Enums.AutomationName;
+using AutomationName = OpenQA.Selenium.Appium.Enums.AutomationName;
 
 namespace AppiumClientMobile.helpers
 {
@@ -13,7 +12,7 @@ namespace AppiumClientMobile.helpers
         public static AppiumOptions GetAndroidUiAutomatorCaps(string app)
         {
             var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUiAutomator2);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidUIAutomator2);
             capabilities.AddAdditionalCapability(DeviceName, "Android Emulator");
             capabilities.AddAdditionalCapability(App, app);
 
@@ -24,18 +23,18 @@ namespace AppiumClientMobile.helpers
         {
             var capabilities = new AppiumOptions();
 
-            capabilities.AddAdditionalCapability(App, GeneralDesiredCaps.AppPathAndroid);
-            capabilities.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, GeneralDesiredCaps.AppPackage);
-            capabilities.AddAdditionalCapability(AndroidMobileCapabilityType.AppWaitActivity, GeneralDesiredCaps.AppWaitActivity);
-
-            capabilities.AddAdditionalCapability(PlatformName, GeneralDesiredCaps.PlatformNameAndroid);
-            capabilities.AddAdditionalCapability(PlatformVersion, GeneralDesiredCaps.PlatformVersionAndroid);
-            capabilities.AddAdditionalCapability(DeviceName, GeneralDesiredCaps.DeviceNameAndroid);
-            capabilities.AddAdditionalCapability(Orientation, GeneralDesiredCaps.OrientationPortrait);
+            capabilities.AddAdditionalCapability("appium:app", GeneralDesiredCaps.AppPathAndroidMac);
+            capabilities.AddAdditionalCapability("appium:appPackage", GeneralDesiredCaps.AppPackage);
+            capabilities.AddAdditionalCapability("appium:appWaitActivity", GeneralDesiredCaps.AppWaitActivity);
+            capabilities.AddAdditionalCapability("platformName", GeneralDesiredCaps.PlatformNameAndroid);
+            capabilities.AddAdditionalCapability("appium:platformVersion", GeneralDesiredCaps.PlatformVersionAndroid);
+            capabilities.AddAdditionalCapability("appium:deviceName", GeneralDesiredCaps.DeviceNameAndroid);
+            capabilities.AddAdditionalCapability("appium:automationName",AutomationEngineName.UiAutomator2);
+            capabilities.AddAdditionalCapability("appium:orientation", GeneralDesiredCaps.OrientationPortrait);
             // ReSharper disable once HeapView.BoxingAllocation
-            capabilities.AddAdditionalCapability(MobileCapabilityType.NoReset, GeneralDesiredCaps.NoReset);
+            capabilities.AddAdditionalCapability("appium:noReset", GeneralDesiredCaps.NoReset);
             // ReSharper disable once HeapView.BoxingAllocation
-            capabilities.AddAdditionalCapability(MobileCapabilityType.FullReset, GeneralDesiredCaps.FullReset);
+            capabilities.AddAdditionalCapability("appium:fullReset", GeneralDesiredCaps.FullReset);
 
             return capabilities;
         }
@@ -46,7 +45,7 @@ namespace AppiumClientMobile.helpers
             capabilities.AddAdditionalCapability(PlatformName, GeneralDesiredCaps.PlatformNameIos);
             capabilities.AddAdditionalCapability(PlatformVersion, GeneralDesiredCaps.PlatformVersionIos);
             capabilities.AddAdditionalCapability(DeviceName, GeneralDesiredCaps.DeviceNameIos);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.XCUITest);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationEngineName.XcuiTest);
             capabilities.AddAdditionalCapability(App, app);
             capabilities.AddAdditionalCapability(LaunchTimeout,
                 Env.InitTimeOutSec.TotalMilliseconds);
@@ -60,9 +59,11 @@ namespace AppiumClientMobile.helpers
             capabilities.AddAdditionalCapability("platformName", GeneralDesiredCaps.PlatformNameIos);
             capabilities.AddAdditionalCapability("appium:platformVersion", GeneralDesiredCaps.PlatformVersionIos);
             capabilities.AddAdditionalCapability("appium:deviceName", GeneralDesiredCaps.DeviceNameIos);
-            capabilities.AddAdditionalCapability("appium:automationName", "XCUITest");
+            capabilities.AddAdditionalCapability("appium:automationName", AutomationEngineName.XcuiTest);
             capabilities.AddAdditionalCapability("appium:app",GeneralDesiredCaps.AppPathIosMac);
             capabilities.AddAdditionalCapability("appium:wdaBaseUrl",GeneralDesiredCaps.WdaBaseUrl);
+            capabilities.AddAdditionalCapability("noReset",GeneralDesiredCaps.NoReset);
+            capabilities.AddAdditionalCapability("bundleId",GeneralDesiredCaps.BundleId);
             capabilities.AddAdditionalCapability(LaunchTimeout,
                 Env.InitTimeOutSec.TotalMilliseconds);
 
@@ -72,7 +73,7 @@ namespace AppiumClientMobile.helpers
         public static AppiumOptions GetAndroidEspressoCaps(string app)
         {
             var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationName.AndroidEspresso);
+            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationEngineName.AndroidEspresso);
             capabilities.AddAdditionalCapability(DeviceName, "Android Emulator");
             capabilities.AddAdditionalCapability(App, app);
 

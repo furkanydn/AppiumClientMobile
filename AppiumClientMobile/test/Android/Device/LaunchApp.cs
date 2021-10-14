@@ -1,10 +1,8 @@
-﻿using System;
-using AppiumClientMobile.helpers;
+﻿using AppiumClientMobile.helpers;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Enums;
 
 namespace AppiumClientMobile.test.Android.Device
 {

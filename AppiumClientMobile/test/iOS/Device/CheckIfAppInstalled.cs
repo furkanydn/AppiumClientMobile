@@ -40,7 +40,7 @@ namespace AppiumClientMobile.test.iOS.Device
         [Test]
         public void CheckIfAppIsInstalledOnSimulator()
         {
-            Boolean isInstalled = _driver.IsAppInstalled("com.Motivist.Dev");
+            var isInstalled = _driver.IsAppInstalled("com.Motivist.Dev");
             Assert.IsTrue(condition: isInstalled, message: Resources.CheckIfAppInstalled_IsInstalledMessage__);
         }
     }

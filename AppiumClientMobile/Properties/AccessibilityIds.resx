@@ -27,7 +27,7 @@
     <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber" xml:space="preserve">
         <value>(555) 123 45 67</value>
     </data>
-    <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_LoginButton" xml:space="preserve">
+    <data name="OtpPage_CheckAbilityToEnterNumberScreen_LoginButton" xml:space="preserve">
         <value>login_button</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTextView" xml:space="preserve">

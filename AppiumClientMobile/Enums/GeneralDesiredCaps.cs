@@ -20,6 +20,8 @@ namespace AppiumClientMobile.Enums
         public static readonly string DeviceNameIos = GeneralCapabilities_Ios_DeviceName;
         public static readonly string OrientationPortrait = GeneralCapabilities_AnyDevice_OrientationPortrait;
 
+        public static readonly string BundleId = GeneralCapabilities_Ios_BundleId;
+
         public static readonly bool NoReset = true;
         public static readonly bool FullReset = false;
 
