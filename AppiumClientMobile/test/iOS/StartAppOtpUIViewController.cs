@@ -51,7 +51,7 @@ namespace AppiumClientMobile.test.iOS
             // Activate
             FindAccessId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_).Click();
             FindAccessId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
-                .SendKeys(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_PhoneNumber);
+                .SendKeys(ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber);
         }
         
         [Test, Order(1)]

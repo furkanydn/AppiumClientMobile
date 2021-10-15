@@ -51,9 +51,10 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToEnterNumberScreen_PhoneNumber {
+        internal static string ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToEnterNumberScreen_PhoneNumber", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNu" +
+                        "mber", resourceCulture);
             }
         }
         
@@ -69,17 +70,16 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTextView {
+        internal static string Android_ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_OtpTex" +
-                        "tView", resourceCulture);
+                return ResourceManager.GetString("Android_ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextAr" +
+                        "ea", resourceCulture);
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_DialogNegativeButton {
+        internal static string ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_Dialog" +
-                        "NegativeButton", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton", resourceCulture);
             }
         }
         
@@ -112,6 +112,41 @@ namespace AppiumClientMobile.Properties {
         internal static string StartAppOtpUIViewController_Allow {
             get {
                 return ResourceManager.GetString("StartAppOtpUIViewController_Allow", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
+                        "nMissions", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
+                        "nBusinessGoals", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
+                        "nIndex", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
+                        "nMarket", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
+                        "nNewsfeeds", resourceCulture);
             }
         }
     }
