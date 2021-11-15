@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{59E5E08C-BDA3-4A06-9567-56D066377DCF}|Default">
   <MonoDevelop.Ide.ItemProperties.AppiumClientMobile PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AppiumClientMobile/test/Android/StartAppOtpActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppiumClientMobile/helpers/Caps.cs">
     <Files>
-      <File FileName="AppiumClientMobile/test/iOS/Device/CheckIfAppInstalled.cs" Line="18" Column="51" />
-      <File FileName="AppiumClientMobile/test/iOS/StartAppOtpUIViewController.cs" Line="18" Column="54" />
-      <File FileName="AppiumClientMobile/test/Android/StartAppOtpActivity.cs" Line="13" Column="37" />
+      <File FileName="AppiumClientMobile/test/Android/DefaultUserStory/OtpActivity.cs" Line="20" Column="66" />
+      <File FileName="AppiumClientMobile/helpers/Caps.cs" Line="23" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,13 +11,15 @@
           <Node name="AppiumClientMobile" expanded="True">
             <Node name="AppiumClientMobile" expanded="True">
               <Node name="Enums" expanded="True" />
-              <Node name="helpers" expanded="True" />
+              <Node name="helpers" expanded="True">
+                <Node name="Caps.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="Resources" expanded="True" />
               <Node name="Service" expanded="True" />
               <Node name="test" expanded="True">
                 <Node name="Android" expanded="True">
-                  <Node name="StartAppOtpActivity.cs" selected="True" />
+                  <Node name="DefaultUserStory" expanded="True" />
                 </Node>
                 <Node name="iOS" expanded="True">
                   <Node name="Device" expanded="True" />

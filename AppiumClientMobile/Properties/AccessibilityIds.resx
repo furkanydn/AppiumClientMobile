@@ -22,16 +22,16 @@
         <value>login_phone_number</value>
     </data>
     <data name="ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber" xml:space="preserve">
-        <value>5551111111</value>
+        <value>5000000000</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber" xml:space="preserve">
-        <value>(555) 111 11 11</value>
+        <value>(500) 000 00 00</value>
     </data>
     <data name="OtpPage_CheckAbilityToEnterNumberScreen_LoginButton" xml:space="preserve">
         <value>login_button</value>
     </data>
-    <data name="Android_ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea" xml:space="preserve">
-        <value>//android.view.ViewGroup[1]/android.widget.TextView[2]</value>
+    <data name="ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea" xml:space="preserve">
+        <value>dialog_text</value>
     </data>
     <data name="ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton" xml:space="preserve">
         <value>dialog_negative_button</value>
@@ -42,8 +42,8 @@
     <data name="StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton" xml:space="preserve">
         <value>login_otp_retry</value>
     </data>
-    <data name="StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText" xml:space="preserve">
-        <value>//android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText</value>
+    <data name="ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText" xml:space="preserve">
+        <value>otp_field</value>
     </data>
     <data name="StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify" xml:space="preserve">
         <value>login_otp_verify</value>
@@ -65,5 +65,8 @@
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds" xml:space="preserve">
         <value>navigation_main_newsfeeds</value>
+    </data>
+    <data name="ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton" xml:space="preserve">
+        <value>dialog_positive_button</value>
     </data>
 </root>

@@ -70,10 +70,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string Android_ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea {
+        internal static string ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea {
             get {
-                return ResourceManager.GetString("Android_ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextAr" +
-                        "ea", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea", resourceCulture);
             }
         }
         
@@ -97,9 +96,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText {
+        internal static string ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText", resourceCulture);
             }
         }
         
@@ -147,6 +146,12 @@ namespace AppiumClientMobile.Properties {
             get {
                 return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
                         "nNewsfeeds", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton", resourceCulture);
             }
         }
     }

@@ -4248,11 +4248,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/AppiumClientMobile.csproj",
+      "projectUniqueName": "/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/AppiumClientMobile.csproj",
       "projectName": "AppiumClientMobile",
-      "projectPath": "/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/AppiumClientMobile.csproj",
+      "projectPath": "/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/AppiumClientMobile.csproj",
       "packagesPath": "/Users/furkanaydin/.nuget/packages/",
-      "outputPath": "/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/obj/",
+      "outputPath": "/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/furkanaydin/.nuget/NuGet/NuGet.Config"
@@ -4265,7 +4265,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -4277,7 +4276,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Appium.WebDriver": {
             "target": "Package",
@@ -4327,7 +4325,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.414/RuntimeIdentifierGraph.json"
       }
     }
   }

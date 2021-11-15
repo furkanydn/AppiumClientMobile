@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "59pcSooMIqmNi0doPC6fDL43vgZs0UmkMriPOtqYMPgHvGAKCIF4KdgTfp+KsULTQCajO+1ygfqr5kx1pwXStg==",
+  "dgSpecHash": "DsPFSo9SxFwB+Br2BTvpGmIYDvB3GtZ89QWwJGbD9+vR/BUMbOhjrlZrMdPyZgqrx6gfOTCSgsd2wvz7U3PLsw==",
   "success": true,
-  "projectFilePath": "/Users/furkanaydin/AppiumClientMobile/AppiumClientMobile/AppiumClientMobile.csproj",
+  "projectFilePath": "/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/AppiumClientMobile.csproj",
   "expectedPackageFiles": [
     "/Users/furkanaydin/.nuget/packages/appium.webdriver/4.3.1/appium.webdriver.4.3.1.nupkg.sha512",
     "/Users/furkanaydin/.nuget/packages/castle.core/4.4.1/castle.core.4.4.1.nupkg.sha512",

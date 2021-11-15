@@ -55,8 +55,6 @@
     <None Remove="test\iOS\Device\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="test\iOS\" />
-    <Folder Include="test\iOS\Device" />
-    <Folder Include="test\iOS\Device\" />
+    <Folder Include="test\Motivist\Hybrid" />
   </ItemGroup>
 </Project>

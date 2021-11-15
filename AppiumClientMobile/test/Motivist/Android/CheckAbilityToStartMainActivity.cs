@@ -5,7 +5,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 
-namespace AppiumClientMobile.test.Android
+namespace AppiumClientMobile.test.Motivist.Android
 {
     public class CheckAbilityToStartMainActivity
     {

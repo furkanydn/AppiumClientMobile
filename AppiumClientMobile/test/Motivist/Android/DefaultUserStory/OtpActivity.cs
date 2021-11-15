@@ -8,7 +8,7 @@ using OpenQA.Selenium.Appium.Android;
 using static AppiumClientMobile.Properties.AccessibilityIds;
 using static AppiumClientMobile.Properties.Resources;
 
-namespace AppiumClientMobile.test.Android.DefaultUserStory
+namespace AppiumClientMobile.test.Motivist.Android.DefaultUserStory
 {
     public class OtpActivity
     {
@@ -42,22 +42,65 @@ namespace AppiumClientMobile.test.Android.DefaultUserStory
         // Methods
         private static void SendPhoneNumberToRequiredField(string number)
         {
-            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
-                .Click();
-            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
-                .SendKeys(number);
+            
         }
         
-        private void SetImplicitWaitTimeoutWithDesiredValueSeconds(double waitTime)
+        private static void FindElementDisplayed(string iWebElement, char condition, char action, string keys)
         {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitTime);
+            bool isDisplayed; 
+            switch (condition)
+            {
+                // Condition: I = ID
+                case 'I':
+                    isDisplayed = _driver.FindElementById(iWebElement).Displayed;
+                    if (isDisplayed)
+                    {
+                        switch (action)
+                        {
+                            // Action: C = Click, S = SendKeys
+                            case 'C':
+                                _driver.FindElementById(iWebElement).Click();
+                                break;
+                            case 'S':
+                                _driver.FindElementById(iWebElement).SendKeys(keys);
+                                break;
+                        }
+                    } else
+                        Debug.WriteLine(ComMotivistDevelopment_Messages_UnknownErrorMessage);
+                    break;
+                // Condition: A = AccessibilityId
+                case 'A':
+                    isDisplayed = _driver.FindElementByAccessibilityId(iWebElement).Displayed;
+                    if (isDisplayed)
+                    {
+                        switch (action)
+                        {
+                            // Action: C = Click, S = SendKeys
+                            case 'C':
+                                _driver.FindElementByAccessibilityId(iWebElement).Click();
+                                break;
+                            case 'S':
+                                _driver.FindElementByAccessibilityId(iWebElement).SendKeys(keys);
+                                break;
+                        }
+                    } else
+                        Debug.WriteLine(ComMotivistDevelopment_Messages_UnknownErrorMessage);
+                    break;
+                default:
+                    Assert.Fail(ComMotivistDevelopment_Messages_UnknownErrorMessage + " - " + iWebElement);
+                    break;
+            }
+            return false;
         }
 
         [Test, Order(0)]
         public void CheckAbilityToEnterNumberScreen()
         {
-            // Activate
-            SendPhoneNumberToRequiredField(ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber);
+            FindElementDisplayed(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_, "AccessId") ?
+                _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                    .Click(); 
+            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .SendKeys(ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber);
             // Verify
             var loginPhoneNumberGetText = _driver
                 .FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
@@ -73,8 +116,8 @@ namespace AppiumClientMobile.test.Android.DefaultUserStory
         public void CheckAbilityToReadAndWriteOtpCodeFromOtpScreen()
         {
             var otpCode = _driver
-                .FindElementByXPath(
-                    Android_ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea)
+                .FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea)
                 .Text;
             Debug.WriteLine(
                 StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
@@ -82,8 +125,17 @@ namespace AppiumClientMobile.test.Android.DefaultUserStory
             _driver.FindElementByAccessibilityId(
                     ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)
                 .Click();
-            _driver.FindElementByXPath(StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText)
-                .SendKeys(otpCode);
+            try
+            {
+                _driver.FindElementById("textInput").SendKeys(otpCode);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e); 
+                _driver.FindElementByXPath(ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText)
+                    .SendKeys(otpCode);
+                throw;
+            }
             
             _driver.FindElementByAccessibilityId(StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
                 .Click();
@@ -93,7 +145,8 @@ namespace AppiumClientMobile.test.Android.DefaultUserStory
         public void CheckAbilityToClickOnMainViewBottomBarButton()
         {
             // Add Wait Timer
-            
+            //FindIWebElementDisplayed(ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions, "AccId");
+
             _driver.FindElementById(
                 ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions).Click();
             _driver.FindElementById(

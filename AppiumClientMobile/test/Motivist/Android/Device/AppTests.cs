@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 
-namespace AppiumClientMobile.test.Android.Device
+namespace AppiumClientMobile.test.Motivist.Android.Device
 {
     internal class AppTests
     {

@@ -104,10 +104,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        public static string StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_UnknownErrorMessage {
+        public static string ComMotivistDevelopment_Messages_UnknownErrorMessage {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_Unknow" +
-                        "nErrorMessage", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_Messages_UnknownErrorMessage", resourceCulture);
             }
         }
         
