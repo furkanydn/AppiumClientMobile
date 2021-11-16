@@ -4255,7 +4255,7 @@
       "outputPath": "/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/furkanaydin/.nuget/NuGet/NuGet.Config"
+        "/Users/furkanaydin/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -4265,6 +4265,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -4276,6 +4277,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Appium.WebDriver": {
             "target": "Package",

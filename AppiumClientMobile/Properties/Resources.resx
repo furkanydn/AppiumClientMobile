@@ -136,13 +136,13 @@
   <data name="StartAppOtpActivity_CheckAbilityToEnterNumberScreen_Current_Activity__" xml:space="preserve">
 	  <value>Current Activity: </value>
   </data>
-  <data name="StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__" xml:space="preserve">
+  <data name="ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage" xml:space="preserve">
     <value>Halen Beklenilmesi Gereken Üç Dakika Sınırı Var!</value>
   </data>
   <data name="CheckIfAppInstalled_IsInstalledMessage__" xml:space="preserve">
     <value>Uygulama Doğru Bir Şekilde Yüklenmedi.</value>
   </data>
-  <data name="StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage" xml:space="preserve">
+  <data name="ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage" xml:space="preserve">
     <value>"Received OTP Code: "</value>
   </data>
   <data name="ComMotivistDevelopment_Messages_UnknownErrorMessage" xml:space="preserve">
@@ -153,5 +153,8 @@
   </data>
   <data name="StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle" xml:space="preserve">
     <value>"Current WindowHandle: "</value>
+  </data>
+  <data name="ComMotivistDevelopment_OtpDialogView_DialogProcessText" xml:space="preserve">
+    <value>İşlemin geçerlilik süresi sona ermiştir. Lütfen tekrar deneyiniz.</value>
   </data>
 </root>

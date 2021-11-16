@@ -45,34 +45,34 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_ {
+        internal static string ComMotivistDevelopment_OtpPage_LoginPhoneNumber {
             get {
-                return ResourceManager.GetString("OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_OtpPage_LoginPhoneNumber", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber {
+        internal static string ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNu" +
-                        "mber", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber", resourceCulture);
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber {
+        internal static string ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber", resourceCulture);
             }
         }
         
-        internal static string OtpPage_CheckAbilityToEnterNumberScreen_LoginButton {
+        internal static string ComMotivistDevelopment_OtpPage_LoginButton {
             get {
-                return ResourceManager.GetString("OtpPage_CheckAbilityToEnterNumberScreen_LoginButton", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_OtpPage_LoginButton", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea {
+        internal static string ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage" +
+                        "", resourceCulture);
             }
         }
         
@@ -82,17 +82,16 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorMessageText {
+        internal static string ComMotivistDevelopment_OtpDialogView_ErrorMessageText {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorM" +
-                        "essageText", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_OtpDialogView_ErrorMessageText", resourceCulture);
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton {
+        internal static string ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRe" +
-                        "try_LoginOtpRetryButton", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOt" +
+                        "pRetry_LoginOtpRetryButton", resourceCulture);
             }
         }
         
@@ -102,9 +101,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify {
+        internal static string ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify", resourceCulture);
             }
         }
         

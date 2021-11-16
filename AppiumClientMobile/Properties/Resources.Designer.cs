@@ -85,9 +85,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        public static string StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__ {
+        public static string ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage", resourceCulture);
             }
         }
         
@@ -97,10 +97,10 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        public static string StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage {
+        public static string ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage {
             get {
-                return ResourceManager.GetString("StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_Receiv" +
-                        "edOtpCodeMessage", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_Rec" +
+                        "eivedOtpCodeMessage", resourceCulture);
             }
         }
         
@@ -119,6 +119,12 @@ namespace AppiumClientMobile.Properties {
         public static string StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle {
             get {
                 return ResourceManager.GetString("StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_OtpDialogView_DialogProcessText {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_OtpDialogView_DialogProcessText", resourceCulture);
             }
         }
     }

@@ -2,16 +2,15 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/5.0.0-alpha/lib/netstandard2.0/Appium.Net.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b965701b_002D9c1c_002D4147_002D919f_002Dfafaff6e79d6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="StartAppOtpActivity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3cbddb73_002D545b_002D4a87_002Dacf5_002Db5555757efaf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OtpActivity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Android.StartAppOtpActivity&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.iOS.Device.CheckAbilityToIsAppInstalled&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.iOS.StartAppOtpUiViewController&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Android.DefaultUserStory.OtpActivity&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Motivist.Android.DefaultUserStory.OtpActivity&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
+	
+	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FAccessibilityIds/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FCapabilities/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FCapabilities/@EntryIndexedValue">True</s:Boolean>
 	
 	
 	

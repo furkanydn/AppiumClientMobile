@@ -49,16 +49,16 @@ namespace AppiumClientMobile.test.iOS
             FindAccessId(StartAppOtpUIViewController_Allow).Click();
             
             // Activate
-            FindAccessId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_).Click();
-            FindAccessId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
-                .SendKeys(ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber);
+            FindAccessId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber).Click();
+            FindAccessId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
+                .SendKeys(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
         }
         
         [Test, Order(1)]
         public void CheckAbilityToLoginButtonClick()
         {
             // Activate
-            FindAccessId(OtpPage_CheckAbilityToEnterNumberScreen_LoginButton).Click();
+            FindAccessId(ComMotivistDevelopment_OtpPage_LoginButton).Click();
         }
     }
 }

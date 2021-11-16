@@ -42,9 +42,9 @@ namespace AppiumClientMobile.test.Motivist.Android
         // Methods
         private static void SendPhoneNumberToRequiredField(string number)
         {
-            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
                 .Click();
-            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
                 .SendKeys(number);
         }
 
@@ -60,31 +60,31 @@ namespace AppiumClientMobile.test.Motivist.Android
             Debug.Print(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_Current_Activity__ +
                         currentActivity);
             // Activate
-            SendPhoneNumberToRequiredField(ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber);
+            SendPhoneNumberToRequiredField(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
 
             // Verify
             var loginPhoneNumberGetText = _driver
-                .FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
                 .Text;
-            Assert.AreEqual(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber,
+            Assert.AreEqual(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
                 loginPhoneNumberGetText);
 
             // Login Button Click
-            _driver.FindElementByAccessibilityId(OtpPage_CheckAbilityToEnterNumberScreen_LoginButton).Click();
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginButton).Click();
         }
 
         [Test, Order(1)]
         public void CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage ()
         {
             if (_driver.FindElementByXPath(
-                ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea).Displayed)
+                ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage).Displayed)
             {
                 var otpCode = _driver
                     .FindElementByXPath(
-                        ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea)
+                        ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage)
                     .Text;
                 Debug.WriteLine(
-                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
+                    ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
                     otpCode);
                 _driver.FindElementByAccessibilityId(
                         ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)
@@ -92,7 +92,7 @@ namespace AppiumClientMobile.test.Motivist.Android
             }
             else if (_driver
                 .FindElementByXPath(
-                    StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorMessageText)
+                    ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
                 .Displayed)
             {
                 // If it gets an error before going to the otp screen and the elements there are not visible, it will enter here.
@@ -101,9 +101,9 @@ namespace AppiumClientMobile.test.Motivist.Android
                     .Click();
                 Assert.IsTrue(
                     _driver.FindElementByXPath(
-                            StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ErrorMessageText)
+                            ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
                         .Displayed,
-                    StartAppOtpActivity_CheckAbilityToGetThreeMinutesError_Wait_Message__);
+                    ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage);
             }
             else
             {
@@ -119,7 +119,7 @@ namespace AppiumClientMobile.test.Motivist.Android
             try
             { 
                 _driver.FindElementByAccessibilityId(
-                        StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton)
+                        ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreenWithWaitThreeMinAfterOtpRetry_LoginOtpRetryButton)
                     .Click();
             }
             catch (Exception e)
@@ -136,7 +136,7 @@ namespace AppiumClientMobile.test.Motivist.Android
             // Get Otp Code And Close Dialog
             string otpCode = _driver
                 .FindElementByXPath(
-                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea).Text;
+                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage).Text;
             _driver.FindElementByAccessibilityId(
                     ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)
                 .Click();
@@ -149,7 +149,7 @@ namespace AppiumClientMobile.test.Motivist.Android
             Assert.AreEqual(otpCode, _driver.FindElementByXPath(
                 ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText).Text);
 
-            _driver.FindElementByAccessibilityId(StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
                 .Click();
 
         }

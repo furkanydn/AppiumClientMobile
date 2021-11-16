@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Threading;
 using AppiumClientMobile.helpers;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
@@ -39,126 +40,99 @@ namespace AppiumClientMobile.test.Motivist.Android.DefaultUserStory
             //_driver.ResetApp();
         }
 
-        // Methods
-        private static void SendPhoneNumberToRequiredField(string number)
-        {
-            
-        }
-        
-        private static void FindElementDisplayed(string iWebElement, char condition, char action, string keys)
-        {
-            bool isDisplayed; 
-            switch (condition)
-            {
-                // Condition: I = ID
-                case 'I':
-                    isDisplayed = _driver.FindElementById(iWebElement).Displayed;
-                    if (isDisplayed)
-                    {
-                        switch (action)
-                        {
-                            // Action: C = Click, S = SendKeys
-                            case 'C':
-                                _driver.FindElementById(iWebElement).Click();
-                                break;
-                            case 'S':
-                                _driver.FindElementById(iWebElement).SendKeys(keys);
-                                break;
-                        }
-                    } else
-                        Debug.WriteLine(ComMotivistDevelopment_Messages_UnknownErrorMessage);
-                    break;
-                // Condition: A = AccessibilityId
-                case 'A':
-                    isDisplayed = _driver.FindElementByAccessibilityId(iWebElement).Displayed;
-                    if (isDisplayed)
-                    {
-                        switch (action)
-                        {
-                            // Action: C = Click, S = SendKeys
-                            case 'C':
-                                _driver.FindElementByAccessibilityId(iWebElement).Click();
-                                break;
-                            case 'S':
-                                _driver.FindElementByAccessibilityId(iWebElement).SendKeys(keys);
-                                break;
-                        }
-                    } else
-                        Debug.WriteLine(ComMotivistDevelopment_Messages_UnknownErrorMessage);
-                    break;
-                default:
-                    Assert.Fail(ComMotivistDevelopment_Messages_UnknownErrorMessage + " - " + iWebElement);
-                    break;
-            }
-            return false;
-        }
-
         [Test, Order(0)]
         public void CheckAbilityToEnterNumberScreen()
         {
-            FindElementDisplayed(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_, "AccessId") ?
-                _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
-                    .Click(); 
-            _driver.FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
-                .SendKeys(ComMotivistDevelopment_CheckNumberEntryFeatureOnTheNumberEntryScreen_LoginPhoneNumber);
-            // Verify
+            // LoginPhoneNumber Click
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber).Click();
+            // LoginPhoneNumber SendKeys
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
+                .SendKeys(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
+            // LoginPhoneNumber Read
             var loginPhoneNumberGetText = _driver
-                .FindElementByAccessibilityId(OtpPage_SendPhoneNumberToRequiredField_LoginPhoneNumber_)
+                .FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
                 .Text;
-            Assert.AreEqual(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_ExpectedNumber,
+            // LoginPhoneNumber Equal Value Check
+            Assert.AreEqual(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
                 loginPhoneNumberGetText);
-
-            // Login Button Click
-            _driver.FindElementByAccessibilityId(OtpPage_CheckAbilityToEnterNumberScreen_LoginButton).Click();
+            // LoginButton Click
+            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginButton).Click();
         }
-        
+
         [Test, Order(1)]
-        public void CheckAbilityToReadAndWriteOtpCodeFromOtpScreen()
+        public void CheckAbilityToReadOtpCodeFromOtpScreen()
         {
-            var otpCode = _driver
+            // OtpTextInput Read
+            var dialogMessage = _driver
                 .FindElementByAccessibilityId(
-                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_OtpTextArea)
+                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage)
                 .Text;
+            // OtpTextInput Write Console
             Debug.WriteLine(
-                StartAppOtpActivity_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
-                otpCode);
+                ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
+                dialogMessage);
+            if (dialogMessage == ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
+            {
+                Debug.WriteLine(ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage);
+            }
+            // OtpDialog Close
             _driver.FindElementByAccessibilityId(
                     ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)
-                .Click();
-            try
-            {
-                _driver.FindElementById("textInput").SendKeys(otpCode);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e); 
-                _driver.FindElementByXPath(ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText)
-                    .SendKeys(otpCode);
-                throw;
-            }
-            
-            _driver.FindElementByAccessibilityId(StartAppOtpActivity_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
                 .Click();
         }
 
         [Test, Order(2)]
+        public void CheckRenewedOtpCodeReadAndWriteOtpScreen()
+        {
+            Thread.Sleep(30000);
+            // OtpMessageDialog Read
+            var dialogTextMessage = _driver
+                .FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage).Text;
+            // OtpMessageDialog Equal Value Check
+            Assert.AreEqual(ComMotivistDevelopment_OtpDialogView_DialogProcessText,dialogTextMessage);
+            // OtpMessageDialog Click Positive
+            _driver.FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton)
+                .Click();
+            // OtpTextInput Read
+            var renewedOtpCode = _driver
+                .FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage)
+                .Text;
+            // OtpDialog Close
+            _driver.FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)
+                .Click();
+            // OtpField Write
+            _driver.FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText)
+                .SendKeys(renewedOtpCode);
+            // LoginOtpVerify Click
+            _driver.FindElementByAccessibilityId(
+                    ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
+                .Click();
+        }
+
+
+        [Test, Order(3)]
         public void CheckAbilityToClickOnMainViewBottomBarButton()
         {
-            // Add Wait Timer
-            //FindIWebElementDisplayed(ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions, "AccId");
-
             _driver.FindElementById(
-                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions).Click();
-            _driver.FindElementById(
-                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals)
+                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions)
                 .Click();
             _driver.FindElementById(
-                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex).Click();
+                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals)
+                .Click();
             _driver.FindElementById(
-                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket).Click();
+                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex)
+                .Click();
             _driver.FindElementById(
-                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds).Click();
-            
+                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket)
+                .Click();
+            _driver.FindElementById(
+                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds)
+                .Click();
         }
     }
 }
