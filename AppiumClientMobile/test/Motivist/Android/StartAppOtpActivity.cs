@@ -84,7 +84,7 @@ namespace AppiumClientMobile.test.Motivist.Android
                         ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage)
                     .Text;
                 Debug.WriteLine(
-                    ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage,
+                    ComMotivistDevelopment_Contexts_ReceivedOtpCodeMessage,
                     otpCode);
                 _driver.FindElementByAccessibilityId(
                         ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)

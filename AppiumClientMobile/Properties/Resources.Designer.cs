@@ -97,10 +97,9 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        public static string ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage {
+        public static string ComMotivistDevelopment_Contexts_ReceivedOtpCodeMessage {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_Rec" +
-                        "eivedOtpCodeMessage", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_ReceivedOtpCodeMessage", resourceCulture);
             }
         }
         
@@ -125,6 +124,24 @@ namespace AppiumClientMobile.Properties {
         public static string ComMotivistDevelopment_OtpDialogView_DialogProcessText {
             get {
                 return ResourceManager.GetString("ComMotivistDevelopment_OtpDialogView_DialogProcessText", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_LoginPhoneNumber {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_LoginPhoneNumber", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_CorrectLoginMessage {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_CorrectLoginMessage", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_CorrectMessage {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_CorrectMessage", resourceCulture);
             }
         }
     }

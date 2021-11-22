@@ -43,10 +43,10 @@
         <value>15.0</value>
     </data>
     <data name="GeneralCapabilities_Ios_AppPath_OnMac" xml:space="preserve">
-        <value>/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/Resources/Motivist.app.zip</value>
+        <value>/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/Resources/motivist.app.zip</value>
     </data>
     <data name="GeneralCapabilities_Android_AppPath_OnMac" xml:space="preserve">
-        <value>/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/Resources/Motivist.apk</value>
+        <value>/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/Resources/motivist.apk</value>
     </data>
     <data name="GeneralCapabilities_Android_AppPackageName" xml:space="preserve">
         <value>com.motivist.development</value>

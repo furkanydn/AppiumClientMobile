@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace AppiumClientMobile.helpers
 {
-    public class Env
+    public static class Env
     {
         public static TimeSpan InitTimeOutSec = TimeSpan.FromSeconds(180);
         public static TimeSpan ImplicitTimeoutSec = TimeSpan.FromSeconds(10);

@@ -142,8 +142,8 @@
   <data name="CheckIfAppInstalled_IsInstalledMessage__" xml:space="preserve">
     <value>Uygulama Doğru Bir Şekilde Yüklenmedi.</value>
   </data>
-  <data name="ComMotivistDevelopment_CheckAbilityToGetOtpCodeFromOtpScreenOrGetErrorMessage_ReceivedOtpCodeMessage" xml:space="preserve">
-    <value>"Received OTP Code: "</value>
+  <data name="ComMotivistDevelopment_Contexts_ReceivedOtpCodeMessage" xml:space="preserve">
+    <value>Alınan OTP Kodu:</value>
   </data>
   <data name="ComMotivistDevelopment_Messages_UnknownErrorMessage" xml:space="preserve">
     <value>An unknown error has occurred please contact the Inooster !</value>
@@ -156,5 +156,14 @@
   </data>
   <data name="ComMotivistDevelopment_OtpDialogView_DialogProcessText" xml:space="preserve">
     <value>İşlemin geçerlilik süresi sona ermiştir. Lütfen tekrar deneyiniz.</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_LoginPhoneNumber" xml:space="preserve">
+    <value>Girilen Numara:</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_CorrectLoginMessage" xml:space="preserve">
+    <value>Kullanıcı başarıyla oturum açtı.</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_CorrectMessage" xml:space="preserve">
+    <value>Girilen bilgiler doğrulandı.</value>
   </data>
 </root>
