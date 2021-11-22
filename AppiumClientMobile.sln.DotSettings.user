@@ -9,14 +9,12 @@
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cb03b61a_002D0593_002D452a_002Da076_002D756134eb0607/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OtpActivity #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Motivist.Hybrid.OtpActivity&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+  &lt;ProjectFolder&gt;59E5E08C-BDA3-4A06-9567-56D066377DCF/d:test/d:Motivist/d:Hybrid&lt;/ProjectFolder&gt;
 &lt;/SessionState&gt;</s:String>
 	
 	
 	
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FAccessibilityIds/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FAccessibilityIds/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FCapabilities/@EntryIndexedValue">False</s:Boolean>
 	
 	
@@ -24,7 +22,7 @@
 	
 	
 	
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyErrors/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyStringResources/@EntryValue">False</s:Boolean>

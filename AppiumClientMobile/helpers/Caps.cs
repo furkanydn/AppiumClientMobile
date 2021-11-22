@@ -7,15 +7,19 @@ namespace AppiumClientMobile.helpers
     public static class Caps
     {
         // This capabilities method will only be used for connection checks.
-        public static AppiumOptions GetAndroidUiAutomatorCaps(string appPath)
+        public static AppiumOptions GetAndroidUiAutomatorCaps()
         {
             var capabilities = new AppiumOptions();
             
-            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformName, GeneralDesiredCaps.PlatformNameAndroid);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, GeneralDesiredCaps.PlatformVersionAndroid);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.DeviceName,  "Android Emulator 5554"); 
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationEngineName.UiAutomator2);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.App, appPath);
+            capabilities.AddAdditionalCapability("platformName", MobilePlatform.Android);
+            capabilities.AddAdditionalCapability("appium:platformVersion", GeneralDesiredCaps.PlatformVersionAndroid);
+            capabilities.AddAdditionalCapability("appium:deviceName", GeneralDesiredCaps.DeviceNameAndroid);
+            capabilities.AddAdditionalCapability("appium:automationName",AutomationEngineName.UiAutomator2);
+            capabilities.AddAdditionalCapability("appPackage", GeneralDesiredCaps.AppPackage);
+            capabilities.AddAdditionalCapability("appWaitActivity", GeneralDesiredCaps.AppWaitActivity);
+            capabilities.AddAdditionalCapability("orientation", GeneralDesiredCaps.OrientationPortrait);
+            capabilities.AddAdditionalCapability("noReset", GeneralDesiredCaps.NoReset);
+            capabilities.AddAdditionalCapability("fullReset", GeneralDesiredCaps.FullReset);
             
             return capabilities;
         }

@@ -49,7 +49,7 @@ namespace AppiumClientMobile.Helpers
         }
         public static void StopLocalService()
         {
-            if (_localService != null && _localService.IsRunning)
+            if (_localService is {IsRunning: true})
             {
                 _localService.Dispose();
                 _localService = null;

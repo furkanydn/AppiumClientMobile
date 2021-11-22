@@ -9,9 +9,11 @@ using static AppiumClientMobile.Properties.Resources;
 
 namespace AppiumClientMobile.test.Motivist.Hybrid
 {
+    [TestFixture, Order(0)]
     public class OtpActivity
     {
         private static AppiumDriver<AppiumWebElement> _driver;
+        private AppiumOptions _appiumOptions;
 
         // ReSharper disable once UnusedMember.Global
         private protected TestContext TestContext { get; set; }
@@ -20,10 +22,10 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void BeforeAll()
         {
             // If you want to use it for ios use GetAndroidUiAutomatorCapsWithAppPackage or android use default
-            var capabilities = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
+            _appiumOptions = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
             var serverUri = AppiumServers.StartLocalService();
             // If you want to use it for ios use iOSDriver or android use AndroidDriver
-            _driver = new AndroidDriver<AppiumWebElement>(serverUri, capabilities, Env.InitTimeOutSec);
+            _driver = new AndroidDriver<AppiumWebElement>(serverUri, _appiumOptions, Env.InitTimeOutSec);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             _driver.LaunchApp();
         }
