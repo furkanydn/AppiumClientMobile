@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Diagnostics;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -28,24 +29,24 @@ namespace AppiumClientMobile.helpers
             }
         }
 
-        // ReSharper disable once UnusedMethodReturnValue.Global
-        public static string? SendElementByAccessibilityId(string element, string action, string? keys)
+        private static void CheckDriverNull()
         {
             if (_driver == null)
             {
                 throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
             }
+        }
+        
+        // ReSharper disable once UnusedMethodReturnValue.Global
+        public static void SendElementByAccessibilityId(string element, string action, string? keys)
+        {
+            CheckDriverNull();
             // Element Find
             // ReSharper disable once SuggestVarOrType_SimpleTypes
+            Debug.Assert(_driver != null, nameof(_driver) + " != null");
             AppiumWebElement appiumWebElement = _driver.FindElementByAccessibilityId(element);
             switch (action)
             {
-                case "text": case "Text":
-                    // Element Click
-                    // ReSharper disable once SuggestVarOrType_BuiltInTypes
-                    string? text = appiumWebElement.Text;
-                    TestContext.WriteLine(element + text);
-                    return text;
                 case "click": case "Click":
                     // Element Click
                     appiumWebElement.Click();
@@ -55,13 +56,26 @@ namespace AppiumClientMobile.helpers
                 case "sendkeys":  case "SendKeys":
                     // Element SendKeys
                     appiumWebElement.SendKeys(keys);
-                    TestContext.WriteLine(element +
-                                          ComMotivistDevelopment_Contexts_ElementSendKeys_To +
-                                          keys +
+                    TestContext.WriteLine(element + 
+                                          ComMotivistDevelopment_Contexts_ElementSendKeys_To + " " +
+                                          keys + " " +
                                           ComMotivistDevelopment_Contexts_ElementSendKeys_Sended);
                     break;
             }
-            return null;
+        }
+
+        public static string GetElementTextByAccessibilityId(string element)
+        {
+            CheckDriverNull();
+            Debug.Assert(_driver != null, nameof(_driver) + " != null");
+            // Element Find
+            AppiumWebElement appiumWebElement = _driver.FindElementByAccessibilityId(element);
+            // ReSharper disable once SuggestVarOrType_BuiltInTypes
+            string text = appiumWebElement.Text;
+            // Element See Action
+            TestContext.WriteLine(element + " " + text);
+            // Element Return Value
+            return text;
         }
     }
 }

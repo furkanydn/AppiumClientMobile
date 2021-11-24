@@ -54,10 +54,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
             // LoginPhoneNumber Read
             // ReSharper disable once SuggestVarOrType_BuiltInTypes
             string loginPhoneNumberGetText =
-                Action.SendElementByAccessibilityId(
-                    ComMotivistDevelopment_Contexts_LoginPhoneNumber,
-                    "Text",
-                    null);
+                Action.GetElementTextByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber);
             // LoginPhoneNumber Equal Value Check
             Assert.AreEqual(
                 ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
@@ -75,10 +72,8 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         {
             // OtpTextInput Read
             // ReSharper disable once SuggestVarOrType_BuiltInTypes
-            string dialogMessage = Action.SendElementByAccessibilityId(
-                ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage, 
-                "Text", 
-                null);
+            string dialogMessage = Action.GetElementTextByAccessibilityId(
+                ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage);
             // If an error message appears instead of the otp code, check
             if (dialogMessage == ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
             {
