@@ -1,30 +1,21 @@
-using System;
 using AppiumClientMobile.helpers;
-using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
 using static AppiumClientMobile.Properties.AccessibilityIds;
+using Action = AppiumClientMobile.helpers.Action;
 
 namespace AppiumClientMobile.test.Motivist.Hybrid
 {
     [TestFixture, Order(1)]
     public class MainActivity
     {
-        private AppiumDriver<AppiumWebElement> _driver;
-        private AppiumOptions _appiumOptions;
-        // Resharper disable once UnusedMember.Global
-        private protected TestContext TestContext { get; set; }
-
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            // If you want to use it for ios use GetAndroidUiAutomatorCapsWithAppPackage or android use default
-            _appiumOptions = Caps.GetAndroidUiAutomatorCaps();
-            var serverUri = AppiumServers.StartLocalService();
-            // If you want to use it for ios use iOSDriver or android use AndroidDriver
-            _driver = new AndroidDriver<AppiumWebElement>(serverUri, _appiumOptions, Env.InitTimeOutSec);
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            // ReSharper disable once SuggestVarOrType_SimpleTypes
+            AppiumOptions appiumOptions = Caps.GetAndroidUiAutomatorCaps();
+            // ReSharper disable once ObjectCreationAsStatement
+            new Action(appiumOptions);
         }
         
         [SetUp]
@@ -41,25 +32,27 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
             //_driver.CloseApp(); 
             //_driver.ResetApp();
         }
-        
+
         [Test, Order(0)]
         public void CheckAbilityToClickOnMainViewBottomBarButton()
         {
-            _driver.FindElementById(
-                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions)
-                .Click();
-            _driver.FindElementById(
-                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals)
-                .Click();
-            _driver.FindElementById(
-                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex)
-                .Click();
-            _driver.FindElementById(
-                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket)
-                .Click();
-            _driver.FindElementById(
-                    ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds)
-                .Click();
+            // NavigationMainIndex Click
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex,
+                "Click",
+                null);
+            // _driver.FindElementByAccessibilityId(
+            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals)
+            //     .Click();
+            // _driver.FindElementByAccessibilityId(
+            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex)
+            //     .Click();
+            // _driver.FindElementByAccessibilityId(
+            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket)
+            //     .Click();
+            // _driver.FindElementByAccessibilityId(
+            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds)
+            //     .Click();
         }
     }
 }

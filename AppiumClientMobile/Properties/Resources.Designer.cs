@@ -115,12 +115,6 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        public static string StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle {
-            get {
-                return ResourceManager.GetString("StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle", resourceCulture);
-            }
-        }
-        
         public static string ComMotivistDevelopment_OtpDialogView_DialogProcessText {
             get {
                 return ResourceManager.GetString("ComMotivistDevelopment_OtpDialogView_DialogProcessText", resourceCulture);
@@ -142,6 +136,30 @@ namespace AppiumClientMobile.Properties {
         public static string ComMotivistDevelopment_Contexts_CorrectMessage {
             get {
                 return ResourceManager.GetString("ComMotivistDevelopment_Contexts_CorrectMessage", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_ElementClicked {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_ElementClicked", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_ElementSendKeys_To {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_ElementSendKeys_To", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_ElementSendKeys_Sended {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_ElementSendKeys_Sended", resourceCulture);
+            }
+        }
+        
+        public static string ComMotivistDevelopment_Contexts_ElementNotSetted {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_Contexts_ElementNotSetted", resourceCulture);
             }
         }
     }

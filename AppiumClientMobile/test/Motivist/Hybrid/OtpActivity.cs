@@ -1,20 +1,15 @@
-using System;
 using AppiumClientMobile.helpers;
-using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
 using static AppiumClientMobile.Properties.AccessibilityIds;
 using static AppiumClientMobile.Properties.Resources;
+using Action = AppiumClientMobile.helpers.Action;
 
 namespace AppiumClientMobile.test.Motivist.Hybrid
 {
     [TestFixture, Order(0)]
     public class OtpActivity
     {
-        private static AppiumDriver<AppiumWebElement> _driver;
-        private AppiumOptions _appiumOptions;
-
         // ReSharper disable once UnusedMember.Global
         private protected TestContext TestContext { get; set; }
 
@@ -22,12 +17,10 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void BeforeAll()
         {
             // If you want to use it for ios use GetAndroidUiAutomatorCapsWithAppPackage or android use default
-            _appiumOptions = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
-            var serverUri = AppiumServers.StartLocalService();
-            // If you want to use it for ios use iOSDriver or android use AndroidDriver
-            _driver = new AndroidDriver<AppiumWebElement>(serverUri, _appiumOptions, Env.InitTimeOutSec);
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            _driver.LaunchApp();
+            // ReSharper disable once SuggestVarOrType_SimpleTypes
+            AppiumOptions appiumOptions = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
+            // ReSharper disable once ObjectCreationAsStatement
+            new Action(appiumOptions);
         }
 
         [SetUp]
@@ -49,51 +42,63 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void CheckAbilityToEnterNumberScreen()
         {
             // LoginPhoneNumber Click
-            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber).Click();
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_OtpPage_LoginPhoneNumber,
+                "Click",
+                null);
             // LoginPhoneNumber SendKeys
-            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
-                .SendKeys(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_OtpPage_LoginPhoneNumber,
+                "SendKeys",
+                ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
             // LoginPhoneNumber Read
-            var loginPhoneNumberGetText = _driver
-                .FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber)
-                .Text;
-            TestContext.WriteLine(ComMotivistDevelopment_Contexts_LoginPhoneNumber + loginPhoneNumberGetText);
+            // ReSharper disable once SuggestVarOrType_BuiltInTypes
+            string loginPhoneNumberGetText =
+                Action.SendElementByAccessibilityId(
+                    ComMotivistDevelopment_Contexts_LoginPhoneNumber,
+                    "Text",
+                    null);
             // LoginPhoneNumber Equal Value Check
-            Assert.AreEqual(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
+            Assert.AreEqual(
+                ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
                 loginPhoneNumberGetText);
             TestContext.WriteLine(ComMotivistDevelopment_Contexts_CorrectMessage);
             // LoginButton Click
-            _driver.FindElementByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginButton).Click();
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_OtpPage_LoginButton,
+                "Click",
+                null);
         }
 
         [Test, Order(1)]
         public void CheckAbilityToReadOtpCodeFromOtpScreen()
         {
             // OtpTextInput Read
-            var dialogMessage = _driver
-                .FindElementByAccessibilityId(
-                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage)
-                .Text;
-            
-            // OtpTextInput Write Console
-            TestContext.WriteLine(ComMotivistDevelopment_Contexts_ReceivedOtpCodeMessage + dialogMessage);
+            // ReSharper disable once SuggestVarOrType_BuiltInTypes
+            string dialogMessage = Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage, 
+                "Text", 
+                null);
             // If an error message appears instead of the otp code, check
             if (dialogMessage == ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
             {
                 TestContext.WriteLine(ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage);
             }
             // OtpDialog Close
-            _driver.FindElementByAccessibilityId(
-                    ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton)
-                .Click();
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton,
+                "Click", 
+                null);
             // OtpField Write
-            _driver.FindElementByAccessibilityId(
-                    ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText)
-                .SendKeys(dialogMessage);
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText,
+                "SendKeys",
+                dialogMessage);
             // LoginOtpVerify Click
-            _driver.FindElementByAccessibilityId(
-                    ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify)
-                .Click();
+            Action.SendElementByAccessibilityId(
+                ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify,
+                "Click",
+                null);
             TestContext.WriteLine(ComMotivistDevelopment_Contexts_CorrectLoginMessage);
         }
     }

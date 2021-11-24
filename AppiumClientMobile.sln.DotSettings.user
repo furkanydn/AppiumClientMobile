@@ -3,11 +3,7 @@
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/5.0.0-alpha/lib/netstandard2.0/Appium.Net.dll" /&gt;
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/4.3.1/lib/netstandard2.0/Appium.Net.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b076bde0_002D812a_002D4744_002D88c0_002D00237de0415e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="OtpActivity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.Motivist.Hybrid.DefaultUserStory.OtpActivity&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cb03b61a_002D0593_002D452a_002Da076_002D756134eb0607/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OtpActivity #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;ProjectFolder&gt;59E5E08C-BDA3-4A06-9567-56D066377DCF/d:test/d:Motivist/d:Hybrid&lt;/ProjectFolder&gt;
 &lt;/SessionState&gt;</s:String>
@@ -22,7 +18,7 @@
 	
 	
 	
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AppiumClientMobile_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyErrors/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/ShowOnlyStringResources/@EntryValue">False</s:Boolean>
@@ -44,6 +40,8 @@
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=motivistv/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=olarak/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Referes/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=sendkeys/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=setted/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=S_0131n_0131r_0131/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=taraf_0131ndaki/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Uygulama/@EntryIndexedValue">True</s:Boolean>

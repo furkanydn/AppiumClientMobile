@@ -52,19 +52,19 @@
         <value>Allow</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions" xml:space="preserve">
-        <value>navigation_main_missions</value>
+        <value>Missions, tab, 1 of 5</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals" xml:space="preserve">
-        <value>navigation_main_business_goals</value>
+        <value>BusinessGoals, tab, 2 of 5</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex" xml:space="preserve">
-        <value>navigation_main_index</value>
+        <value>Index, tab, 3 of 5</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket" xml:space="preserve">
-        <value>navigation_main_market</value>
+        <value>Market, tab, 4 of 5</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds" xml:space="preserve">
-        <value>navigation_main_newsfeeds</value>
+        <value>Feeds, tab, 5 of 5</value>
     </data>
     <data name="ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton" xml:space="preserve">
         <value>dialog_positive_button</value>

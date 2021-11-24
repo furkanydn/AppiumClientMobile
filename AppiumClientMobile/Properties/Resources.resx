@@ -151,9 +151,6 @@
   <data name="Helpers_AppiumServers_ServerAddress" xml:space="preserve">
     <value>http://127.0.0.1:4723/wd/hub</value>
   </data>
-  <data name="StartAppOtpUiViewController_CheckAbilityToEnterNumberView_CurrentWindowHandle" xml:space="preserve">
-    <value>"Current WindowHandle: "</value>
-  </data>
   <data name="ComMotivistDevelopment_OtpDialogView_DialogProcessText" xml:space="preserve">
     <value>İşlemin geçerlilik süresi sona ermiştir. Lütfen tekrar deneyiniz.</value>
   </data>
@@ -165,5 +162,17 @@
   </data>
   <data name="ComMotivistDevelopment_Contexts_CorrectMessage" xml:space="preserve">
     <value>Girilen bilgiler doğrulandı.</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_ElementClicked" xml:space="preserve">
+    <value>'a Tıklandı.</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_ElementSendKeys_To" xml:space="preserve">
+    <value>'a</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_ElementSendKeys_Sended" xml:space="preserve">
+    <value>Verisi Gönderildi.</value>
+  </data>
+  <data name="ComMotivistDevelopment_Contexts_ElementNotSetted" xml:space="preserve">
+    <value>Element not setted</value>
   </data>
 </root>
