@@ -1,9 +1,8 @@
 using AppiumClientMobile.helpers;
 using NUnit.Framework;
-using OpenQA.Selenium.Appium;
 using static AppiumClientMobile.Properties.AccessibilityIds;
 using static AppiumClientMobile.Properties.Resources;
-using Action = AppiumClientMobile.helpers.Action;
+using static AppiumClientMobile.Enums.GeneralDesiredCaps;
 
 namespace AppiumClientMobile.test.Motivist.Hybrid
 {
@@ -16,11 +15,8 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            // If you want to use it for ios use GetAndroidUiAutomatorCapsWithAppPackage or android use default
-            // ReSharper disable once SuggestVarOrType_SimpleTypes
-            AppiumOptions appiumOptions = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
             // ReSharper disable once ObjectCreationAsStatement
-            new Action(appiumOptions);
+            new DriverWithParams(mobilePlatform: AppiumMobilePlatform,0);
         }
 
         [SetUp]
@@ -42,26 +38,26 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void CheckAbilityToEnterNumberScreen()
         {
             // LoginPhoneNumber Click
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_OtpPage_LoginPhoneNumber,
                 "Click",
                 null);
             // LoginPhoneNumber SendKeys
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_OtpPage_LoginPhoneNumber,
                 "SendKeys",
                 ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
             // LoginPhoneNumber Read
             // ReSharper disable once SuggestVarOrType_BuiltInTypes
             string loginPhoneNumberGetText =
-                Action.GetElementTextByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber);
+                DriverWithParams.GetElementTextByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber);
             // LoginPhoneNumber Equal Value Check
             Assert.AreEqual(
                 ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
                 loginPhoneNumberGetText);
             TestContext.WriteLine(ComMotivistDevelopment_Contexts_CorrectMessage);
             // LoginButton Click
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_OtpPage_LoginButton,
                 "Click",
                 null);
@@ -72,7 +68,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         {
             // OtpTextInput Read
             // ReSharper disable once SuggestVarOrType_BuiltInTypes
-            string dialogMessage = Action.GetElementTextByAccessibilityId(
+            string dialogMessage = DriverWithParams.GetElementTextByAccessibilityId(
                 ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage);
             // If an error message appears instead of the otp code, check
             if (dialogMessage == ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
@@ -80,17 +76,17 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
                 TestContext.WriteLine(ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage);
             }
             // OtpDialog Close
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton,
                 "Click", 
                 null);
             // OtpField Write
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText,
                 "SendKeys",
                 dialogMessage);
             // LoginOtpVerify Click
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify,
                 "Click",
                 null);

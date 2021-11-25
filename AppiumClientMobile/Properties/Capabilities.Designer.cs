@@ -128,5 +128,11 @@ namespace AppiumClientMobile.Properties {
                 return ResourceManager.GetString("GeneralCapabilities_Ios_BundleId", resourceCulture);
             }
         }
+        
+        internal static string GeneralCapabilities_Hybrid_MobilePlatform {
+            get {
+                return ResourceManager.GetString("GeneralCapabilities_Hybrid_MobilePlatform", resourceCulture);
+            }
+        }
     }
 }

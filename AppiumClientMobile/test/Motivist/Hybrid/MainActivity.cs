@@ -1,8 +1,7 @@
 using AppiumClientMobile.helpers;
 using NUnit.Framework;
-using OpenQA.Selenium.Appium;
 using static AppiumClientMobile.Properties.AccessibilityIds;
-using Action = AppiumClientMobile.helpers.Action;
+using static AppiumClientMobile.Enums.GeneralDesiredCaps;
 
 namespace AppiumClientMobile.test.Motivist.Hybrid
 {
@@ -12,10 +11,8 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            // ReSharper disable once SuggestVarOrType_SimpleTypes
-            AppiumOptions appiumOptions = Caps.GetAndroidUiAutomatorCaps();
             // ReSharper disable once ObjectCreationAsStatement
-            new Action(appiumOptions);
+            new DriverWithParams(mobilePlatform: AppiumMobilePlatform, 1);
         }
         
         [SetUp]
@@ -37,7 +34,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void CheckAbilityToClickOnMainViewBottomBarButton()
         {
             // NavigationMainIndex Click
-            Action.SendElementByAccessibilityId(
+            DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex,
                 "Click",
                 null);

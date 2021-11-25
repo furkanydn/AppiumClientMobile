@@ -8,7 +8,7 @@ namespace AppiumClientMobile.helpers
     public static class Env
     {
         public static TimeSpan InitTimeOutSec = TimeSpan.FromSeconds(180);
-        public static TimeSpan ImplicitTimeoutSec = TimeSpan.FromSeconds(10);
+        public static TimeSpan ImplicitTimeoutSec = TimeSpan.FromSeconds(30);
 
         private static Dictionary<string, string> _env;
         private static bool _initialized;
@@ -17,14 +17,12 @@ namespace AppiumClientMobile.helpers
         {
             try
             {
-                if (!_initialized)
-                {
-                    _initialized = true;
-                    var path = AppDomain.CurrentDomain.BaseDirectory;
-                    var sr = new StreamReader(path + "env.json");
-                    var jsonString = sr.ReadToEnd();
-                    _env = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
-                }
+                if (_initialized) return;
+                _initialized = true;
+                var path = AppDomain.CurrentDomain.BaseDirectory;
+                var sr = new StreamReader(path + "env.json");
+                var jsonString = sr.ReadToEnd();
+                _env = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
             }
             catch (Exception)
             {

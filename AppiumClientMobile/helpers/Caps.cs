@@ -41,22 +41,26 @@ namespace AppiumClientMobile.helpers
             return capabilities;
         }
 
-        public static AppiumOptions GetIosXcuiTestCaps(string app)
+        public static AppiumOptions GetIosXcuiTestCaps()
         {
-            var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformName, GeneralDesiredCaps.PlatformNameIos);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, GeneralDesiredCaps.PlatformVersionIos);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.DeviceName, GeneralDesiredCaps.DeviceNameIos);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.AutomationName, AutomationEngineName.XcuiTest);
-            capabilities.AddAdditionalCapability(MobileCapabilityType.App, app);
+            // ReSharper disable once SuggestVarOrType_SimpleTypes
+            AppiumOptions capabilities = new AppiumOptions();
+            capabilities.AddAdditionalCapability("platformName", MobilePlatform.IOS);
+            capabilities.AddAdditionalCapability("appium:platformVersion", GeneralDesiredCaps.PlatformVersionIos);
+            capabilities.AddAdditionalCapability("appium:deviceName", GeneralDesiredCaps.DeviceNameIos);
+            capabilities.AddAdditionalCapability("appium:automationName", AutomationEngineName.XcuiTest);
+            capabilities.AddAdditionalCapability("appium:wdaBaseUrl",GeneralDesiredCaps.WdaBaseUrl);
+            capabilities.AddAdditionalCapability("noReset",GeneralDesiredCaps.NoReset);
+            capabilities.AddAdditionalCapability("bundleId",GeneralDesiredCaps.BundleId);
 
             return capabilities;
         }
         
         public static AppiumOptions GetIosXcuiTestCapsWithAppPackage()
         {
-            var capabilities = new AppiumOptions();
-            capabilities.AddAdditionalCapability("platformName", GeneralDesiredCaps.PlatformNameIos);
+            // ReSharper disable once SuggestVarOrType_SimpleTypes
+            AppiumOptions capabilities = new AppiumOptions();
+            capabilities.AddAdditionalCapability("platformName", MobilePlatform.IOS);
             capabilities.AddAdditionalCapability("appium:platformVersion", GeneralDesiredCaps.PlatformVersionIos);
             capabilities.AddAdditionalCapability("appium:deviceName", GeneralDesiredCaps.DeviceNameIos);
             capabilities.AddAdditionalCapability("appium:automationName", AutomationEngineName.XcuiTest);

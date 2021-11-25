@@ -60,4 +60,7 @@
     <data name="GeneralCapabilities_Ios_BundleId" xml:space="preserve">
         <value>com.Motivist.Dev</value>
     </data>
+    <data name="GeneralCapabilities_Hybrid_MobilePlatform" xml:space="preserve">
+        <value>0</value>
+    </data>
 </root>
