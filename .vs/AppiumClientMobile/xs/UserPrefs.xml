@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{59E5E08C-BDA3-4A06-9567-56D066377DCF}|Default">
   <MonoDevelop.Ide.ItemProperties.AppiumClientMobile PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AppiumClientMobile/test/Motivist/Android/StartAppOtpActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppiumClientMobile/test/Motivist/Hybrid/OtpActivity.cs">
     <Files>
-      <File FileName="AppiumClientMobile/helpers/Caps.cs" Line="23" Column="37" />
-      <File FileName="AppiumClientMobile/test/Motivist/Android/StartAppOtpActivity.cs" Line="17" Column="18" />
+      <File FileName="AppiumClientMobile/test/Motivist/Hybrid/OtpActivity.cs" Line="9" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,9 +16,8 @@
               <Node name="Service" expanded="True" />
               <Node name="test" expanded="True">
                 <Node name="Motivist" expanded="True">
-                  <Node name="Android" expanded="True">
-                    <Node name="StartAppOtpActivity.cs" selected="True" />
-                  </Node>
+                  <Node name="Android" expanded="True" />
+                  <Node name="Hybrid" expanded="True" />
                 </Node>
                 <Node name="ServerTests" expanded="True" />
               </Node>

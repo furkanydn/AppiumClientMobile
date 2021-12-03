@@ -153,5 +153,89 @@ namespace AppiumClientMobile.Properties {
                 return ResourceManager.GetString("ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton", resourceCulture);
             }
         }
+        
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_MenuIcon {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_MenuIcon", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationClose {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationClose", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationIndex {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationIndex", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationProfile {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationProfile", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationTransactionDetail {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationTransactionDetail", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationUserCompare {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationUserCompare", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationNotifications {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationNotifications", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationTips {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationTips", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationHelp {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationHelp", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationSettings {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationSettings", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigation8 {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigation8", resourceCulture);
+            }
+        }
     }
 }

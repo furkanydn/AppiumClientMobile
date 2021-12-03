@@ -69,4 +69,46 @@
     <data name="ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton" xml:space="preserve">
         <value>dialog_positive_button</value>
     </data>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero" xml:space="preserve">
+        <value>mainToolBar_0</value>
+    </data>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne" xml:space="preserve">
+        <value>mainToolBar_1</value>
+    </data>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage" xml:space="preserve">
+        <value>MainProfileImage</value>
+    </data>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_MenuIcon" xml:space="preserve">
+        <value>MainMenuIcon</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationClose" xml:space="preserve">
+        <value>drawer_navigation_close</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationIndex" xml:space="preserve">
+        <value>drawer_navigation_Index</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationProfile" xml:space="preserve">
+        <value>drawer_navigation_Profile</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationTransactionDetail" xml:space="preserve">
+        <value>drawer_navigation_TransactionDetail</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationUserCompare" xml:space="preserve">
+        <value>drawer_navigation_UserCompare</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationNotifications" xml:space="preserve">
+        <value>drawer_navigation_Notifications</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationTips" xml:space="preserve">
+        <value>drawer_navigation_Tips</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationHelp" xml:space="preserve">
+        <value>drawer_navigation_Help</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationSettings" xml:space="preserve">
+        <value>drawer_navigation_Settings</value>
+    </data>
+    <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigation8" xml:space="preserve">
+        <value>drawer_navigation_8</value>
+    </data>
 </root>

@@ -1,3 +1,4 @@
+using System.Threading;
 using AppiumClientMobile.helpers;
 using NUnit.Framework;
 using static AppiumClientMobile.Properties.AccessibilityIds;
@@ -36,6 +37,16 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
             // NavigationMainIndex Click
             DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex,
+                "Click",
+                null);
+            // mainToolBar_0 Click
+            DriverWithParams.SendElementByAccessibilityId(
+                ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero,
+                "Click",
+                null);
+            Thread.Sleep(1000);
+            DriverWithParams.SendElementByAccessibilityId(
+                ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne,
                 "Click",
                 null);
             // _driver.FindElementByAccessibilityId(
