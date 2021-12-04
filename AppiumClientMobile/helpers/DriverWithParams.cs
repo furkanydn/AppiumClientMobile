@@ -1,6 +1,7 @@
 #nullable enable
 using System;
 using System.Diagnostics;
+using System.Threading;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
@@ -13,6 +14,7 @@ namespace AppiumClientMobile.helpers
     public class DriverWithParams
     {
         private static AppiumDriver<AppiumWebElement>? _driver;
+        
         /// <summary>
         /// Initializes a new instance of the Action class.
         /// You can use the mobile platform and application package for the driver.
@@ -83,7 +85,19 @@ namespace AppiumClientMobile.helpers
                 throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
             }
         }
-        
+
+        /// <summary>
+        /// Send a sequence of key strokes to an element or Click element at its center point.
+        /// </summary>
+        /// <param name="element">An Accessibility Id selector, finds the first of elements that match the Accessibility Id selector supplied</param>
+        /// <param name="action">Actions of the session to route the command to</param>
+        /// <param name="keys">The sequence of keys to type. An array must be provided. The server should flatten the array items to a single string to be typed</param>
+        /// <returns>IWebElement object so that you can interact that object</returns>
+        /// <example>
+        /// <code>
+        /// DriverWithParams.SendElementByAccessibilityId( element , action , keys);
+        /// </code>
+        /// </example>
         // ReSharper disable once UnusedMethodReturnValue.Global
         public static void SendElementByAccessibilityId(string element, string action, string? keys)
         {
@@ -97,12 +111,14 @@ namespace AppiumClientMobile.helpers
                 case "click": case "Click":
                     // Element Click
                     appiumWebElement.Click();
+                    Thread.Sleep(500);
                     // Element See Action
                     TestContext.WriteLine(element + ComMotivistDevelopment_Contexts_ElementClicked);
                     break;
                 case "sendkeys":  case "SendKeys":
                     // Element SendKeys
                     appiumWebElement.SendKeys(keys);
+                    Thread.Sleep(500);
                     TestContext.WriteLine(element + 
                                           ComMotivistDevelopment_Contexts_ElementSendKeys_To + " " +
                                           keys + " " +
@@ -111,6 +127,16 @@ namespace AppiumClientMobile.helpers
             }
         }
 
+        /// <summary>
+        /// Returns visible text for element
+        /// </summary>
+        /// <param name="element">Accessibility ID of the element to get the text from</param>
+        /// <returns>Returns the visible text for the element.</returns>
+        /// <example>
+        /// <code>
+        /// DriverWithParams.GetElementTextByAccessibilityId( element);
+        /// </code>
+        /// </example>
         public static string GetElementTextByAccessibilityId(string element)
         {
             CheckDriverNull();

@@ -1,6 +1,7 @@
 using System.Threading;
 using AppiumClientMobile.helpers;
 using NUnit.Framework;
+using OpenQA.Selenium.Interactions;
 using static AppiumClientMobile.Properties.AccessibilityIds;
 using static AppiumClientMobile.Enums.GeneralDesiredCaps;
 
@@ -32,35 +33,50 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         }
 
         [Test, Order(0)]
-        public void CheckAbilityToClickOnMainViewBottomBarButton()
+        public void CheckAbilityToActionsOnMainToolBarComponent()
         {
             // NavigationMainIndex Click
             DriverWithParams.SendElementByAccessibilityId(
-                ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex,
+                ComMotivistDevelopment_NavigationMain_Index,
                 "Click",
                 null);
-            // mainToolBar_0 Click
+            // MainMenuIcon Click
             DriverWithParams.SendElementByAccessibilityId(
-                ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero,
+                ComMotivistDevelopment_IndexPageMainToolBar_MenuIcon,
                 "Click",
                 null);
-            Thread.Sleep(1000);
+            // DrawerNavigationClose Click
             DriverWithParams.SendElementByAccessibilityId(
-                ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne,
+                ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationClose,
                 "Click",
                 null);
-            // _driver.FindElementByAccessibilityId(
-            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals)
-            //     .Click();
-            // _driver.FindElementByAccessibilityId(
-            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex)
-            //     .Click();
-            // _driver.FindElementByAccessibilityId(
-            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket)
-            //     .Click();
-            // _driver.FindElementByAccessibilityId(
-            //         ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds)
-            //     .Click();
+            // MainProfileImage Click
+            DriverWithParams.SendElementByAccessibilityId(
+                ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage,
+                "Click",
+                null);
+            // Header-Back Click
+            DriverWithParams.SendElementByAccessibilityId(
+                ComMotivistDevelopment_GeneralPages_HeaderBack,
+                "Click",
+                null);
+            // MottoList comes here by default, first click on the Announcements due to the id hiding situation.
+            // Announcements Click
+            DriverWithParams.SendElementByAccessibilityId(
+                ComMotivistDevelopment_IndexPageMainToolBar_Announcements,
+                "Click",
+                null);
+            // MottoList Click
+            DriverWithParams.SendElementByAccessibilityId(
+                ComMotivistDevelopment_IndexPageMainToolBar_MottoList,
+                "Click",
+                null);
+        }
+
+        [Test, Order(1)]
+        public void CheckAbilityToActionsOnMottoAnd()
+        {
+            //Actions actions = new Actions(driver)
         }
     }
 }

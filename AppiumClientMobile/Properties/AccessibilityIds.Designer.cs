@@ -113,38 +113,33 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions {
+        internal static string ComMotivistDevelopment_NavigationMain_Missions {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
-                        "nMissions", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_NavigationMain_Missions", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals {
+        internal static string ComMotivistDevelopment_NavigationMain_BusinessGoals {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
-                        "nBusinessGoals", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_NavigationMain_BusinessGoals", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex {
+        internal static string ComMotivistDevelopment_NavigationMain_Index {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
-                        "nIndex", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_NavigationMain_Index", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket {
+        internal static string ComMotivistDevelopment_NavigationMain_Market {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
-                        "nMarket", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_NavigationMain_Market", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds {
+        internal static string ComMotivistDevelopment_NavigationMain_Feeds {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMai" +
-                        "nNewsfeeds", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_NavigationMain_Feeds", resourceCulture);
             }
         }
         
@@ -154,15 +149,15 @@ namespace AppiumClientMobile.Properties {
             }
         }
         
-        internal static string ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero {
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_MottoList {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_MottoList", resourceCulture);
             }
         }
         
-        internal static string ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne {
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_Announcements {
             get {
-                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne", resourceCulture);
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_Announcements", resourceCulture);
             }
         }
         
@@ -235,6 +230,12 @@ namespace AppiumClientMobile.Properties {
         internal static string ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigation8 {
             get {
                 return ResourceManager.GetString("ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigation8", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_GeneralPages_HeaderBack {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_GeneralPages_HeaderBack", resourceCulture);
             }
         }
     }

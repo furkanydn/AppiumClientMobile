@@ -22,10 +22,10 @@
         <value>login_phone_number</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber" xml:space="preserve">
-        <value>5551111111</value>
+        <value>5510000000</value>
     </data>
     <data name="ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber" xml:space="preserve">
-        <value>(555) 111 11 11</value>
+        <value>(551) 000 00 00</value>
     </data>
     <data name="ComMotivistDevelopment_OtpPage_LoginButton" xml:space="preserve">
         <value>login_button</value>
@@ -51,29 +51,29 @@
     <data name="StartAppOtpUIViewController_Allow" xml:space="preserve">
         <value>Allow</value>
     </data>
-    <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMissions" xml:space="preserve">
+    <data name="ComMotivistDevelopment_NavigationMain_Missions" xml:space="preserve">
         <value>Missions, tab, 1 of 5</value>
     </data>
-    <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainBusinessGoals" xml:space="preserve">
+    <data name="ComMotivistDevelopment_NavigationMain_BusinessGoals" xml:space="preserve">
         <value>BusinessGoals, tab, 2 of 5</value>
     </data>
-    <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainIndex" xml:space="preserve">
+    <data name="ComMotivistDevelopment_NavigationMain_Index" xml:space="preserve">
         <value>Index, tab, 3 of 5</value>
     </data>
-    <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainMarket" xml:space="preserve">
+    <data name="ComMotivistDevelopment_NavigationMain_Market" xml:space="preserve">
         <value>Market, tab, 4 of 5</value>
     </data>
-    <data name="ComMotivistDevelopment_CheckAbilityToClickOnMainViewBottomBarButton_NavigationMainNewsfeeds" xml:space="preserve">
+    <data name="ComMotivistDevelopment_NavigationMain_Feeds" xml:space="preserve">
         <value>Feeds, tab, 5 of 5</value>
     </data>
     <data name="ComMotivistDevelopment_CheckFromMessageDialog_DialogPositiveButton" xml:space="preserve">
         <value>dialog_positive_button</value>
     </data>
-    <data name="ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonZero" xml:space="preserve">
-        <value>mainToolBar_0</value>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_MottoList" xml:space="preserve">
+        <value>MainToolBar_0</value>
     </data>
-    <data name="ComMotivistDevelopment_IndexPageMainToolBar_ToolBarButtonOne" xml:space="preserve">
-        <value>mainToolBar_1</value>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_Announcements" xml:space="preserve">
+        <value>MainToolBar_1</value>
     </data>
     <data name="ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage" xml:space="preserve">
         <value>MainProfileImage</value>
@@ -110,5 +110,8 @@
     </data>
     <data name="ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigation8" xml:space="preserve">
         <value>drawer_navigation_8</value>
+    </data>
+    <data name="ComMotivistDevelopment_GeneralPages_HeaderBack" xml:space="preserve">
+        <value>Go back</value>
     </data>
 </root>
