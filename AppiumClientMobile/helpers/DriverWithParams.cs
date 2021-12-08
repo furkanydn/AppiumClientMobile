@@ -1,13 +1,19 @@
 #nullable enable
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.iOS;
+using OpenQA.Selenium.Appium.MultiTouch;
 using static AppiumClientMobile.Properties.Resources;
+
+// ReSharper disable once SuggestVarOrType_SimpleTypes
+// ReSharper disable once SuggestVarOrType_BuiltInTypes
 
 namespace AppiumClientMobile.helpers
 {
@@ -103,7 +109,6 @@ namespace AppiumClientMobile.helpers
         {
             CheckDriverNull();
             // Element Find
-            // ReSharper disable once SuggestVarOrType_SimpleTypes
             Debug.Assert(_driver != null, nameof(_driver) + " != null");
             AppiumWebElement appiumWebElement = _driver.FindElementByAccessibilityId(element);
             switch (action)
@@ -143,12 +148,86 @@ namespace AppiumClientMobile.helpers
             Debug.Assert(_driver != null, nameof(_driver) + " != null");
             // Element Find
             AppiumWebElement appiumWebElement = _driver.FindElementByAccessibilityId(element);
-            // ReSharper disable once SuggestVarOrType_BuiltInTypes
             string text = appiumWebElement.Text;
             // Element See Action
             TestContext.WriteLine(element + " " + text);
             // Element Return Value
             return text;
+        }
+        
+        public static void SwipeScreen(Direction direction)
+        {
+            TestContext.WriteLine("Swipe Screen(): direction: " + direction);
+            Debug.Assert(_driver != null, nameof(_driver) + " != null");
+            // Animation default time:
+            //  - Android: 300 ms
+            //  - iOS: 200 ms
+            const int animationTime = 200; // ms
+            const int pressTime = 200; // ms
+            const int edgeBorder = 12; // avoid edges
+            var optionX = 0;
+            var optionY = 0;
+            // init screen variables
+            Size dimension = _driver.Manage().Window.Size;
+            // Calculation of X coordinate and Y coordinate on the screen
+            int scrollHeight = (int) (dimension.Height / 2);
+            int scrollWidth = (int) (dimension.Width / 2);
+
+            switch (direction)
+            {
+                case Direction.Up: // center of header
+                    optionX = scrollWidth / 2;
+                    optionY = edgeBorder;
+                    break;
+                case Direction.Down: // center of footer
+                    optionX = scrollWidth - edgeBorder;
+                    optionY = scrollHeight  / 2 ;
+                    break;
+                case Direction.Left:
+                    optionX = edgeBorder;
+                    optionY = scrollHeight / 2;
+                    break;
+                case Direction.Right:
+                    optionX = scrollWidth - edgeBorder;
+                    optionY = scrollHeight / 2;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(direction), direction, @"not supported.");
+            }
+            // execute swipe using TouchAction
+            try
+            {
+                new TouchAction(_driver)
+                    .Press(scrollWidth,scrollHeight)
+                    .Wait(pressTime)
+                    .MoveTo(optionX,optionY)
+                    .Release()
+                    .Perform();
+                TestContext.WriteLine("Swipe Screen(): Press "+ scrollWidth + " - " + scrollHeight);
+                TestContext.WriteLine("Swipe Screen(): MoveTo "+ optionX + " - " + optionY);
+            }
+            catch (Exception e)
+            {
+                TestContext.WriteLine("Swipe Screen(): TouchAction Failed\n" + e.Message);
+                throw;
+            }
+            // always allow swipe action to complete
+            try
+            {
+                Thread.Sleep(animationTime);
+            }
+            catch (ThreadInterruptedException e)
+            {
+                // ignore
+            }
+        }
+        
+        public enum Direction
+        {
+            Up,
+            Down,
+            Left,
+            Right
         }
     }
 }

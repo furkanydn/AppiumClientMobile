@@ -76,7 +76,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         [Test, Order(1)]
         public void CheckAbilityToActionsOnMottoAnd()
         {
-            //Actions actions = new Actions(driver)
+            DriverWithParams.SwipeScreen(DriverWithParams.Direction.Down);
         }
     }
 }
