@@ -80,6 +80,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
                 ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton,
                 "Click", 
                 null);
+            
             // OtpField Write
             DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText,

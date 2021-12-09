@@ -154,7 +154,18 @@ namespace AppiumClientMobile.helpers
             // Element Return Value
             return text;
         }
-        
+
+        /// <summary>
+        /// Swipe has start and end points. The start point of swipe is most important. The following elements may prevent swipe start: - application interface/menu e.g. header or footer - elements that are waiting tap and do not pass touch to scroll view.
+        /// Performs swipe from the center of screen
+        /// </summary>
+        /// <param name="direction">The direction of swipe</param>
+        /// <example>
+        /// <code>
+        /// DriverWithParams.SwipeScreen(DriverWithParams.Direction.Down);
+        /// </code>
+        /// </example>
+        /// <footer><a href="http://appium.io/docs/en/commands/interactions/touch/scroll/">Scroll based motion events</a></footer>
         public static void SwipeScreen(Direction direction)
         {
             TestContext.WriteLine("Swipe Screen(): direction: " + direction);

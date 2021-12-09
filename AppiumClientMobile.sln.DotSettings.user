@@ -4,10 +4,11 @@
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/5.0.0-alpha/lib/netstandard2.0/Appium.Net.dll" /&gt;
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/4.3.1/lib/netstandard2.0/Appium.Net.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cb03b61a_002D0593_002D452a_002Da076_002D756134eb0607/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OtpActivity #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=76e9454b_002De244_002D4c29_002Dab73_002D91f155a3e014/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Hybrid" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;ProjectFolder&gt;59E5E08C-BDA3-4A06-9567-56D066377DCF/d:test/d:Motivist/d:Hybrid&lt;/ProjectFolder&gt;
 &lt;/SessionState&gt;</s:String>
+	
+	
 	
 	
 	
