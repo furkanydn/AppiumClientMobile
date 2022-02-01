@@ -1,7 +1,5 @@
-using System.Threading;
 using AppiumClientMobile.helpers;
 using NUnit.Framework;
-using OpenQA.Selenium.Interactions;
 using static AppiumClientMobile.Properties.AccessibilityIds;
 using static AppiumClientMobile.Enums.GeneralDesiredCaps;
 
@@ -14,7 +12,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void BeforeAll()
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new DriverWithParams(mobilePlatform: AppiumMobilePlatform, 1);
+            new DriverWithParams(AppiumMobilePlatform, 1);
         }
         
         [SetUp]
@@ -50,6 +48,12 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
                 ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationClose,
                 "Click",
                 null);
+            // Main UserName GetName
+            string userName =
+                DriverWithParams.GetElementTextByAccessibilityId(
+                    ComMotivistDevelopment_IndexPageMainToolBar_UserName);
+            // Check UserName is not null
+            Assert.AreNotEqual(null, userName);
             // MainProfileImage Click
             DriverWithParams.SendElementByAccessibilityId(
                 ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage,
@@ -71,13 +75,21 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
                 ComMotivistDevelopment_IndexPageMainToolBar_MottoList,
                 "Click",
                 null);
+            // Motto Slider Swipe
+            
         }
 
         [Test, Order(1)]
-        public void CheckAbilityToActionsOnMottoAnd()
+        public void CheckAbilityToActionsOnHorizontalScroll()
         {
-            // Motion Events Swipe Down
+            // Motion Events Swipe Right
             DriverWithParams.SwipeScreen(DriverWithParams.Direction.Down);
+        }
+        
+        [Test, Order(2)]
+        public void CheckAbilityToActionsOnHomeMission()
+        {
+            // Motion Events Click Todo
         }
     }
 }

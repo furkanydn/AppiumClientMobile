@@ -7,13 +7,11 @@ using AppiumClientMobile.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.iOS;
 using OpenQA.Selenium.Appium.MultiTouch;
 using static AppiumClientMobile.Properties.Resources;
-
-// ReSharper disable once SuggestVarOrType_SimpleTypes
-// ReSharper disable once SuggestVarOrType_BuiltInTypes
+// ReSharper disable SuggestVarOrType_BuiltInTypes
+// ReSharper disable SuggestVarOrType_SimpleTypes
 
 namespace AppiumClientMobile.helpers
 {
@@ -32,7 +30,7 @@ namespace AppiumClientMobile.helpers
         /// [OneTimeSetUp]
         /// public void BeforeAll()
         /// {
-        ///     new CreateNewAppiumServerWithParams(0,1);
+        ///     new DriverWithParams(0,1);
         /// }
         /// </code>
         /// </example>
@@ -84,6 +82,10 @@ namespace AppiumClientMobile.helpers
                 }
             }
         }
+        /// <summary>
+        /// It's the method for detecting whether or not the Driver item is functional.
+        /// </summary>
+        /// <exception cref="NullReferenceException">The exception that is thrown when there is an attempt to dereference a null object reference.</exception>
         private static void CheckDriverNull()
         {
             if (_driver == null)
@@ -116,14 +118,14 @@ namespace AppiumClientMobile.helpers
                 case "click": case "Click":
                     // Element Click
                     appiumWebElement.Click();
-                    Thread.Sleep(500);
+                    Thread.Sleep(1000);
                     // Element See Action
                     TestContext.WriteLine(element + ComMotivistDevelopment_Contexts_ElementClicked);
                     break;
                 case "sendkeys":  case "SendKeys":
                     // Element SendKeys
                     appiumWebElement.SendKeys(keys);
-                    Thread.Sleep(500);
+                    Thread.Sleep(1000);
                     TestContext.WriteLine(element + 
                                           ComMotivistDevelopment_Contexts_ElementSendKeys_To + " " +
                                           keys + " " +
@@ -168,14 +170,13 @@ namespace AppiumClientMobile.helpers
         /// <footer><a href="http://appium.io/docs/en/commands/interactions/touch/scroll/">Scroll based motion events</a></footer>
         public static void SwipeScreen(Direction direction)
         {
-            TestContext.WriteLine("Swipe Screen(): direction: " + direction);
+            TestContext.WriteLine("Swipe Screen(): Direction: " + direction);
             Debug.Assert(_driver != null, nameof(_driver) + " != null");
             // Animation default time:
             //  - Android: 300 ms
             //  - iOS: 200 ms
-            const int animationTime = 200; // ms
+            const int animationTime = 300; // ms
             const int pressTime = 200; // ms
-            const int edgeBorder = 12; // avoid edges
             var optionX = 0;
             var optionY = 0;
             // init screen variables
@@ -187,20 +188,20 @@ namespace AppiumClientMobile.helpers
             switch (direction)
             {
                 case Direction.Up: // center of header
-                    optionX = scrollWidth / 2;
-                    optionY = edgeBorder;
+                    optionX = scrollWidth;
+                    optionY = (int) (scrollHeight * 1.75);
                     break;
                 case Direction.Down: // center of footer
-                    optionX = scrollWidth - edgeBorder;
+                    optionX = scrollWidth;
                     optionY = scrollHeight  / 2 ;
                     break;
                 case Direction.Left:
-                    optionX = edgeBorder;
-                    optionY = scrollHeight / 2;
+                    optionX = scrollWidth / 3;
+                    optionY = scrollHeight;
                     break;
                 case Direction.Right:
-                    optionX = scrollWidth - edgeBorder;
-                    optionY = scrollHeight / 2;
+                    optionX = (int) (scrollWidth * 1.5);
+                    optionY = scrollHeight;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(direction), direction, @"not supported.");
@@ -239,6 +240,41 @@ namespace AppiumClientMobile.helpers
             Down,
             Left,
             Right
+        }
+
+        public enum Offset
+        {
+            Left,
+            Right
+        }
+        // todo just use right and left for element
+        public static void ScrollToElement(string element, Offset direction)
+        {
+            TestContext.WriteLine("Scroll on the: " + element);
+            Debug.Assert(_driver != null, nameof(_driver) + " != null");
+            // init element variables
+            var elementor = _driver.FindElementByAccessibilityId(element);
+            int elementWidth = elementor.Size.Width;
+            int elementHeight = elementor.Size.Height;
+            TestContext.WriteLine("Element Size > Width: "+elementWidth+"-Height: " +elementHeight);
+            int calcStartWidth = (elementWidth / 10) * 2;
+            int calcHeight = (elementHeight / 2);
+            int calcEndWidth = (elementWidth / 10) * 8;
+
+            switch (direction)
+            {
+                case Offset.Right:
+                    new TouchAction(_driver).Press(calcStartWidth,calcHeight).MoveTo(calcEndWidth,calcHeight).Release().Perform();
+                    TestContext.WriteLine("Element Scroll > StartX: "+calcStartWidth+ "StartY: " +calcHeight+"-EndX: " +calcEndWidth+"-EndY: " +calcHeight);
+                    break;
+                case Offset.Left:
+                    new TouchAction(_driver).Press(calcEndWidth,calcHeight).MoveTo(calcStartWidth,calcHeight).Release().Perform();
+                    TestContext.WriteLine("Element Scroll > StartX: "+calcEndWidth+ "StartY: " +calcHeight+"-EndX: " +calcStartWidth+"-EndY: " +calcHeight);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(direction), direction, @"not supported.");
+            }
+            
         }
     }
 }

@@ -4261,10 +4261,13 @@
         "netcoreapp3.1"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/inooster/Noos.Application/_packaging/NoosApplicationPackage/nuget/v3/index.json": {},
+        "https://pkgs.dev.azure.com/inooster/Noos/_packaging/NoosPackage/nuget/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -4276,6 +4279,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Appium.WebDriver": {
             "target": "Package",
@@ -4325,7 +4329,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.415/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
       }
     }
   }

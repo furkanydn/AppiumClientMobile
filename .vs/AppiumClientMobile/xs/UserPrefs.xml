@@ -17,16 +17,15 @@
               <Node name="test" expanded="True">
                 <Node name="Motivist" expanded="True">
                   <Node name="Android" expanded="True" />
-                  <Node name="Hybrid" expanded="True" />
+                  <Node name="Hybrid" expanded="True">
+                    <Node name="OtpActivity.cs" selected="True" />
+                  </Node>
                 </Node>
                 <Node name="ServerTests" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

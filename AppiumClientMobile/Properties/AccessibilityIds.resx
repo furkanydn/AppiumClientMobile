@@ -114,4 +114,10 @@
     <data name="ComMotivistDevelopment_GeneralPages_HeaderBack" xml:space="preserve">
         <value>Go back</value>
     </data>
+    <data name="ComMotivistDevelopment_IndexPageMainToolBar_UserName" xml:space="preserve">
+        <value>user.Name</value>
+    </data>
+    <data name="ComMotivistDevelopment_IndexPageHomeMission_Header" xml:space="preserve">
+        <value>paramMissionHeader</value>
+    </data>
 </root>

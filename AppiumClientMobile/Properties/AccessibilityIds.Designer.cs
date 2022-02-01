@@ -238,5 +238,17 @@ namespace AppiumClientMobile.Properties {
                 return ResourceManager.GetString("ComMotivistDevelopment_GeneralPages_HeaderBack", resourceCulture);
             }
         }
+        
+        internal static string ComMotivistDevelopment_IndexPageMainToolBar_UserName {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageMainToolBar_UserName", resourceCulture);
+            }
+        }
+        
+        internal static string ComMotivistDevelopment_IndexPageHomeMission_Header {
+            get {
+                return ResourceManager.GetString("ComMotivistDevelopment_IndexPageHomeMission_Header", resourceCulture);
+            }
+        }
     }
 }
