@@ -71,5 +71,18 @@ namespace AppiumClientMobile.helpers
 
             return capabilities;
         }
+        
+        public static AppiumOptions GetAndroidYuruBeIstanbulCapabilities()
+        {
+            var capabilities = new AppiumOptions();
+            capabilities.AddAdditionalCapability("platformName", MobilePlatform.Android);
+            capabilities.AddAdditionalCapability("appium:platformVersion", "11");
+            capabilities.AddAdditionalCapability("appium:deviceName", "Pixel3s");
+            capabilities.AddAdditionalCapability("appium:automationName","UIAutomator2");
+            capabilities.AddAdditionalCapability("appium:app","/Users/furkanaydin/Desktop/Inooster/ybi/debug/app-universal-debug.apk");
+            capabilities.AddAdditionalCapability("noReset", true);
+            capabilities.AddAdditionalCapability("fullReset", false);
+            return capabilities;
+        }
     }
 }

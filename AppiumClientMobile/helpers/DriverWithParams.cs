@@ -257,9 +257,9 @@ namespace AppiumClientMobile.helpers
             int elementWidth = elementor.Size.Width;
             int elementHeight = elementor.Size.Height;
             TestContext.WriteLine("Element Size > Width: "+elementWidth+"-Height: " +elementHeight);
-            int calcStartWidth = (elementWidth / 10) * 2;
+            int calcStartWidth = (elementWidth / 10) * 8;
             int calcHeight = (elementHeight / 2);
-            int calcEndWidth = (elementWidth / 10) * 8;
+            int calcEndWidth = elementWidth / 10;
 
             switch (direction)
             {
@@ -275,6 +275,29 @@ namespace AppiumClientMobile.helpers
                     throw new ArgumentOutOfRangeException(nameof(direction), direction, @"not supported.");
             }
             
+        }
+
+        // run script methods
+        public static void RunShScript()
+        {
+            const string command = "sh";
+            var scriptFile = "filepath.sh";
+            const string arguments = "filepath.sh";
+            var processInfo = new ProcessStartInfo()
+            {
+                FileName = command,
+                Arguments = arguments,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true
+            };
+            Process process = Process.Start(processInfo) ?? throw new InvalidOperationException();
+            while (!process.StandardOutput.EndOfStream)
+            {
+                string result = process.StandardOutput.ReadLine() ?? string.Empty;
+                // textcontext
+            }
+            process.WaitForExit();
         }
     }
 }

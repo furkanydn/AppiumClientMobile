@@ -16,7 +16,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void BeforeAll()
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new DriverWithParams(mobilePlatform: AppiumMobilePlatform,0);
+            new DriverWithParams(AppiumMobilePlatform,0);
         }
 
         [SetUp]

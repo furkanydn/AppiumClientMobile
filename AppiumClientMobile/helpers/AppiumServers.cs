@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using AppiumClientMobile.helpers;
 using AppiumClientMobile.Properties;
@@ -31,7 +32,6 @@ namespace AppiumClientMobile.Helpers
                 return _localService.ServiceUrl;
             }
         }
-
         public static Uri RemoteServerUri
         {
             get
@@ -49,17 +49,28 @@ namespace AppiumClientMobile.Helpers
         }
         public static void StopLocalService()
         {
-            if (_localService is {IsRunning: true})
-            {
-                _localService.Dispose();
-                _localService = null;
-            }
+            if (!(_localService is {IsRunning: true})) return;
+            _localService.Dispose();
+            _localService = null;
         }
 
         public static Uri StartLocalService()
         {
             var localServerUri = new Uri(Resources.Helpers_AppiumServers_ServerAddress);
             return localServerUri;
+        }
+
+        public static void RunAppiumServer()
+        {
+            var processStartInfo = new ProcessStartInfo
+            {
+                UseShellExecute = false,
+                WorkingDirectory = "/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/Resources/Scripts/appiumStart.sh",
+                FileName = "sh",
+                RedirectStandardOutput = true,
+            };
+            var cmd = Process.Start(processStartInfo);
+            cmd?.WaitForExit();
         }
     }
 }
