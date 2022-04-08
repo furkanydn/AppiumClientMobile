@@ -1,4 +1,5 @@
-﻿using AppiumClientMobile.Enums;
+﻿#nullable enable
+using AppiumClientMobile.Enums;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Enums;
 
@@ -72,7 +73,7 @@ namespace AppiumClientMobile.helpers
             return capabilities;
         }
         
-        public static AppiumOptions GetAndroidYuruBeIstanbulCapabilities()
+        public static AppiumOptions GetAndroidYuruBeIstanbulCapabilities(string? activity=null)
         {
             var capabilities = new AppiumOptions();
             capabilities.AddAdditionalCapability("platformName", MobilePlatform.Android);
@@ -80,6 +81,9 @@ namespace AppiumClientMobile.helpers
             capabilities.AddAdditionalCapability("appium:deviceName", "Pixel3s");
             capabilities.AddAdditionalCapability("appium:automationName","UIAutomator2");
             capabilities.AddAdditionalCapability("appium:app","/Users/furkanaydin/Desktop/Inooster/ybi/debug/app-universal-debug.apk");
+            capabilities.AddAdditionalCapability("appium:appPackage","tr.gov.ibb.yurubeistanbul");
+            if (activity != null)
+                capabilities.AddAdditionalCapability("appium:appActivity", "com.yurubeistanbul." + activity);
             capabilities.AddAdditionalCapability("noReset", true);
             capabilities.AddAdditionalCapability("fullReset", false);
             return capabilities;

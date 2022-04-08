@@ -299,7 +299,6 @@ C:/Users/FurkanAYDIN/source/repos/AppiumClientMobile/AppiumClientMobile/obj/Debu
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll
-/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.csprojAssemblyReference.cache
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.Properties.AccessibilityIds.resources
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.Properties.Capabilities.resources
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.Properties.Resources.resources
@@ -311,3 +310,5 @@ C:/Users/FurkanAYDIN/source/repos/AppiumClientMobile/AppiumClientMobile/obj/Debu
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.dll
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.pdb
 /Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.genruntimeconfig.cache
+/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.csproj.AssemblyReference.cache
+/Users/furkanaydin/Projects/AppiumClientMobile/AppiumClientMobile/obj/Debug/netcoreapp3.1/AppiumClientMobile.GeneratedMSBuildEditorConfig.editorconfig

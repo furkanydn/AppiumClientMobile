@@ -1,59 +1,48 @@
-using System;
-using AppiumClientMobile.helpers;
-using AppiumClientMobile.Helpers;
 using AppiumClientMobile.test.YuruBeIstanbul.Android.Objects.Components;
 using AppiumClientMobile.test.YuruBeIstanbul.Android.Objects.Constant;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium;
 
 namespace AppiumClientMobile.test.YuruBeIstanbul.Android.Suites
 {
     [TestFixture]
+    [NonParallelizable]
+    [Order(0)]
     public class Walkthrough
     {
-        private static AndroidDriver<IWebElement> _androidDriver;
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
+        [Test]
+        [Order(0)]
+        public static void CheckWalkthroughScreenComponents(                                                                                   
+            [Values(typeof(AppiumDriver<AppiumWebElement>))] AppiumDriver<AppiumWebElement> appiumDriver)
         {
-            var capabilities = Caps.GetAndroidYuruBeIstanbulCapabilities();
-            var serverUri = AppiumServers.StartLocalService();
-            _androidDriver = new AndroidDriver<IWebElement>(serverUri, capabilities, Env.InitTimeOutSec);
-            _androidDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-        }
-
-        [Test, Order(0)]
-        public void CheckWalkthroughScreenComponents()
-        {
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                         WalkthroughComponent.TcWalkthroughAppStarting).Text, 
                 Is.EqualTo(WalkthroughConst.TcWalkthroughAppStarting));
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                     WalkthroughComponent.TcWalkthroughAnimationFirst).Displayed,
                 Is.True);
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                     WalkthroughComponent.TcWalkthroughStepText).Text,
                 Is.EqualTo(WalkthroughConst.TcWalkthroughStepText));
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                 WalkthroughComponent.TcWalkthroughStepDesc).Text,
                 Is.EqualTo(WalkthroughConst.TcWalkthroughStepDesc));
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                 WalkthroughComponent.TcWalkthroughAnimationSecond).Displayed,
                 Is.True);
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                 WalkthroughComponent.TcWalkthroughExploreText).Text, 
                 Is.EqualTo(WalkthroughConst.TcWalkthroughExploreText));
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                 WalkthroughComponent.TcWalkthroughExploreDesc).Text,
                 Is.EqualTo(WalkthroughConst.TcWalkthroughExploreDesc));
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                 WalkthroughComponent.TcWalkthroughRewardsText).Text,
                 Is.EqualTo(WalkthroughConst.TcWalkthroughRewardsText));
-            Assert.That(_androidDriver.FindElementByAccessibilityId(
+            Assert.That(appiumDriver.FindElementByAccessibilityId(
                 WalkthroughComponent.TcWalkthroughRewardsDesc).Text,
                 Is.EqualTo(WalkthroughConst.TcWalkthroughRewardsDesc));
-            _androidDriver.FindElementById(WalkthroughComponent.TcWalkthroughContinueButton).Click();
+            appiumDriver.FindElementById(WalkthroughComponent.TcWalkthroughContinueButton).Click();
         }
     }
 }
