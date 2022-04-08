@@ -53,13 +53,11 @@ namespace AppiumClientMobile.Helpers
             _localService.Dispose();
             _localService = null;
         }
-
         public static Uri StartLocalService()
         {
             var localServerUri = new Uri(Resources.Helpers_AppiumServers_ServerAddress);
             return localServerUri;
         }
-
         public static void RunAppiumServer()
         {
             var processStartInfo = new ProcessStartInfo

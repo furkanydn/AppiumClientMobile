@@ -7,49 +7,10 @@ namespace AppiumClientMobile.test.YuruBeIstanbul.Android.Objects.Constant
     }
 }
 /*
-MobileElement el1 = (MobileElement) driver.findElementById("tr.gov.ibb.yurubeistanbul:id/continueButton");
-el1.click();
-MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("Show dropdown menu");
-el3.click();
-MobileElement el4 = (MobileElement) driver.findElementById("tr.gov.ibb.yurubeistanbul:id/gender");
-el4.click();
-MobileElement el5 = (MobileElement) driver.findElementById("tr.gov.ibb.yurubeistanbul:id/male");
-el5.click();
-MobileElement el6 = (MobileElement) driver.findElementById("tr.gov.ibb.yurubeistanbul:id/positiveButton");
-el6.click();
-MobileElement el7 = (MobileElement) driver.findElementById("tr.gov.ibb.yurubeistanbul:id/birthday");
-el7.click();
-MobileElement el8 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[3]/android.widget.EditText");
-el8.sendKeys("1990");
-(new TouchAction(driver))
-  .press({x: 742, y: 1513})
-  .moveTo({x: 739: y: 1866})
-  .release()
-  .perform()
+
   
-(new TouchAction(driver))
-  .press({x: 748, y: 1494})
-  .moveTo({x: 748: y: 1869})
-  .release()
-  .perform()
   
-(new TouchAction(driver))
-  .press({x: 752, y: 1491})
-  .moveTo({x: 748: y: 1888})
-  .release()
-  .perform()
   
-(new TouchAction(driver))
-  .press({x: 524, y: 1857})
-  .moveTo({x: 521: y: 1506})
-  .release()
-  .perform()
-  
-(new TouchAction(driver))
-  .press({x: 309, y: 1522})
-  .moveTo({x: 303: y: 1879})
-  .release()
-  .perform()
   
 MobileElement el9 = (MobileElement) driver.findElementById("tr.gov.ibb.yurubeistanbul:id/positiveButton");
 el9.click();

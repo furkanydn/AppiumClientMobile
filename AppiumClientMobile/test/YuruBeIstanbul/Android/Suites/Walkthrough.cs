@@ -6,8 +6,6 @@ using OpenQA.Selenium.Appium;
 namespace AppiumClientMobile.test.YuruBeIstanbul.Android.Suites
 {
     [TestFixture]
-    [NonParallelizable]
-    [Order(0)]
     public class Walkthrough
     {
         [Test]
