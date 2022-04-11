@@ -18,30 +18,13 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         [Test, Order(0)]
         public void CheckAbilityToEnterNumberScreen()
         {
-            // LoginPhoneNumber Click
-            SendElementByAccessibilityId(
+            ActionByElement(Commands.Click, FindMethod.ByAccessibilityId, ComMotivistDevelopment_OtpPage_LoginPhoneNumber);
+            ActionByElement(Commands.SendKeys, FindMethod.ByAccessibilityId,
                 ComMotivistDevelopment_OtpPage_LoginPhoneNumber,
-                "Click",
-                null);
-            // LoginPhoneNumber SendKeys
-            SendElementByAccessibilityId(
-                ComMotivistDevelopment_OtpPage_LoginPhoneNumber,
-                "SendKeys",
                 ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);
-            // LoginPhoneNumber Read
-            // ReSharper disable once SuggestVarOrType_BuiltInTypes
-            string loginPhoneNumberGetText =
-                GetElementTextByAccessibilityId(ComMotivistDevelopment_OtpPage_LoginPhoneNumber);
-            // LoginPhoneNumber Equal Value Check
-            Assert.AreEqual(
-                ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,
-                loginPhoneNumberGetText);
-            TestContext.WriteLine(ComMotivistDevelopment_Contexts_CorrectMessage);
-            // LoginButton Click
-            SendElementByAccessibilityId(
-                ComMotivistDevelopment_OtpPage_LoginButton,
-                "Click",
-                null);
+            var numText = ActionByElement(Commands.Text, FindMethod.ByAccessibilityId, ComMotivistDevelopment_OtpPage_LoginPhoneNumber);
+            Assert.That(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_ExpectedNumber,Is.EqualTo(numText));
+            ActionByElement(Commands.Click, FindMethod.ByAccessibilityId, ComMotivistDevelopment_OtpPage_LoginButton);
         }
 
         [Test, Order(1)]

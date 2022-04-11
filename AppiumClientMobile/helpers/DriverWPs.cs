@@ -129,7 +129,7 @@ namespace AppiumClientMobile.helpers
             }
         }
 
-        public static void ActionByElement(Commands commands, FindMethod findMethod, string element,string keys=null)
+        public static string ActionByElement(Commands commands, FindMethod findMethod, string element,string keys=null)
         {
             if (Driver == null) throw new NullReferenceException("It receives an error because the required options are not met.");
             switch (commands)
@@ -163,12 +163,63 @@ namespace AppiumClientMobile.helpers
                     }
                     break;
                 case Commands.SendKeys:
+                    switch (findMethod)
+                    {
+                        case FindMethod.ById:
+                            Driver.FindElementById(element).SendKeys(keys);
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ById | {element}");
+                            break;
+                        case FindMethod.ByName:
+                            Driver.FindElementByName(element).SendKeys(keys);
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByName | {element}");
+                            break;
+                        case FindMethod.ByAccessibilityId:
+                            Driver.FindElementByAccessibilityId(element).SendKeys(keys);
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByAccessibilityId | {element}");
+                            break;
+                        case FindMethod.ByXPath:
+                            Driver.FindElementByXPath(element).SendKeys(keys);
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByXPath | {element}");
+                            break;
+                        case FindMethod.ByLinkText:
+                            Driver.FindElementByXPath(element).SendKeys(keys);
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByLinkText | {element}");
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(findMethod), findMethod, null);
+                    }
                     break;
                 case Commands.Text:
-                    break;
+                    string text;
+                    switch (findMethod)
+                    {
+                        case FindMethod.ById:
+                            text = Driver.FindElementById(element).Text;
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ById | {element}");
+                            return text;
+                        case FindMethod.ByName:
+                            text = Driver.FindElementByName(element).Text;
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByName | {element}");
+                            return text;
+                        case FindMethod.ByAccessibilityId:
+                            text = Driver.FindElementByAccessibilityId(element).Text;
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByAccessibilityId | {element}");
+                            return text;
+                        case FindMethod.ByXPath:
+                            text = Driver.FindElementByXPath(element).Text;
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByXPath | {element}");
+                            return text;
+                        case FindMethod.ByLinkText:
+                            text = Driver.FindElementByXPath(element).Text;
+                            TestContext.WriteLine($"{DateTime.Now:s} | SendKeys | ByLinkText | {element}");
+                            return text;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(findMethod), findMethod, null);
+                    }
                 default:
                     throw new ArgumentOutOfRangeException(nameof(commands), commands, null);
             }
+            return null;
         }
 
         public enum Commands
