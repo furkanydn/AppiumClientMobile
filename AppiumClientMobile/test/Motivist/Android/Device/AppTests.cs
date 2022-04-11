@@ -1,25 +1,25 @@
-﻿using System;
-using AppiumClientMobile.helpers;
-using AppiumClientMobile.Helpers;
+﻿using AppiumClientMobile.helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
 
 namespace AppiumClientMobile.test.Motivist.Android.Device
 {
     internal class AppTests
     {
         private AppiumDriver<IWebElement> _driver;
+
+        public AppTests(AppiumDriver<IWebElement> driver)
+        {
+            _driver = driver;
+        }
+
         private const string IntentAppPackageName = "com.motivist.development";
 
         [OneTimeSetUp]
         public void SetUp()
         {
-            var capabilities = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
-            var serverUri = AppiumServers.StartLocalService();
-            _driver = new AndroidDriver<IWebElement>(serverUri, capabilities, Env.InitTimeOutSec);
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            new DriverWPs(DriverWPs.MobilePlatform.Android,DriverWPs.MobileProject.Motivist,true);
         }
 
         [OneTimeTearDown]

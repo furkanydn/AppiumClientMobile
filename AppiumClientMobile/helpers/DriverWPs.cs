@@ -1,99 +1,191 @@
-#nullable enable
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using AppiumClientMobile.Helpers;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.iOS;
 using OpenQA.Selenium.Appium.MultiTouch;
 using static AppiumClientMobile.Properties.Resources;
-// ReSharper disable SuggestVarOrType_BuiltInTypes
-// ReSharper disable SuggestVarOrType_SimpleTypes
 
 namespace AppiumClientMobile.helpers
 {
-    public class DriverWithParams
+    public class DriverWPs
     {
-        private static AppiumDriver<AppiumWebElement>? _driver;
-        
+        public static AppiumDriver<AppiumWebElement> Driver { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the Action class.
-        /// You can use the mobile platform and application package for the driver.
+        /// You can use the mobile platform, mobile project name and application package for the driver.
         /// </summary>
         /// <param name="mobilePlatform">Mobile platform to be used with this object</param>
+        /// <param name="mobileProject"></param>
         /// <param name="appPackageRequired">The requirement of the application package is controlled by this object. <br/> 0 is sent with the application package and 1 without the application package.</param>
         /// <example>
         /// <code>
         /// [OneTimeSetUp]
         /// public void BeforeAll()
         /// {
-        ///     new DriverWithParams(0,1);
+        ///     new DriverWPs(MobilePlatform.Android, MobileProject.Motivist, true);
         /// }
         /// </code>
         /// </example>
-        public DriverWithParams(byte mobilePlatform, byte appPackageRequired)
+        public DriverWPs(MobilePlatform mobilePlatform, MobileProject mobileProject,bool appPackageRequired)
         {
-            switch (_driver)
+            switch (Driver)
             {
                 case null:
                 {
                     AppiumOptions appiumOptions;
-                    Uri serverUri;
                     switch (mobilePlatform)
                     {
-                        case 0 when appPackageRequired == 0:
-                            appiumOptions = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
-                            serverUri = AppiumServers.StartLocalService();
-                            _driver = new AndroidDriver<AppiumWebElement>(serverUri, appiumOptions, Env.InitTimeOutSec);
-                            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                            _driver.LaunchApp();
-                            break;
-                        case 0:
-                            appiumOptions = Caps.GetAndroidUiAutomatorCaps();
-                            serverUri = AppiumServers.StartLocalService();
-                            _driver = new AndroidDriver<AppiumWebElement>(serverUri, appiumOptions, Env.InitTimeOutSec);
-                            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                            break;
-                        default:
-                        {
-                            switch (appPackageRequired)
+                        case MobilePlatform.Android:
+                            switch (mobileProject)
                             {
-                                case 0:
-                                    appiumOptions = Caps.GetIosXcuiTestCapsWithAppPackage();
-                                    serverUri = AppiumServers.StartLocalService();
-                                    _driver = new IOSDriver<AppiumWebElement>(serverUri, appiumOptions, Env.InitTimeOutSec);
-                                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                                    _driver.LaunchApp();
+                                case MobileProject.Motivist:
+                                    appiumOptions = appPackageRequired
+                                        ? Caps.GetMotivistCapabilities(Caps.Os.Android, true)
+                                        : Caps.GetMotivistCapabilities(Caps.Os.Android, false);
+                                    DriverManager(MobilePlatform.Android, appiumOptions);
+                                    break;
+                                case MobileProject.Ybi:
+                                    appiumOptions = appPackageRequired
+                                        ? Caps.GetYuruBeIstanbulCapabilities(Caps.Os.Android, true)
+                                        : Caps.GetYuruBeIstanbulCapabilities(Caps.Os.Android, false);
+                                    DriverManager(MobilePlatform.Android, appiumOptions);
                                     break;
                                 default:
-                                    appiumOptions = Caps.GetIosXcuiTestCaps();
-                                    serverUri = AppiumServers.StartLocalService();
-                                    _driver = new IOSDriver<AppiumWebElement>(serverUri, appiumOptions, Env.InitTimeOutSec);
-                                    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-                                    break;
+                                    throw new ArgumentOutOfRangeException(nameof(mobileProject), mobileProject, null);
                             }
                             break;
-                        }
+                        case MobilePlatform.iOS:
+                            switch (mobileProject)
+                            {
+                                case MobileProject.Motivist:
+                                    appiumOptions = appPackageRequired
+                                        ? Caps.GetMotivistCapabilities(Caps.Os.iOS, true)
+                                        : Caps.GetMotivistCapabilities(Caps.Os.iOS, false);
+                                    DriverManager(MobilePlatform.iOS,appiumOptions);
+                                    break;
+                                case MobileProject.Ybi:
+                                    appiumOptions = appPackageRequired
+                                        ? Caps.GetYuruBeIstanbulCapabilities(Caps.Os.iOS, true)
+                                        : Caps.GetYuruBeIstanbulCapabilities(Caps.Os.iOS, false);
+                                    DriverManager(MobilePlatform.iOS,appiumOptions);
+                                    break;
+                                default:
+                                    throw new ArgumentOutOfRangeException(nameof(mobileProject), mobileProject, null);
+                            }
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(mobilePlatform), mobilePlatform, null);
                     }
                     break;
                 }
             }
         }
-        /// <summary>
-        /// It's the method for detecting whether or not the Driver item is functional.
-        /// </summary>
-        /// <exception cref="NullReferenceException">The exception that is thrown when there is an attempt to dereference a null object reference.</exception>
-        private static void CheckDriverNull()
+
+        public enum MobilePlatform
         {
-            if (_driver == null)
+            Android,
+            // ReSharper disable once InconsistentNaming
+            iOS
+        }
+
+        public enum MobileProject
+        {
+            Motivist,
+            Ybi
+        }
+
+        /// <summary>
+        /// DriverManager is a method that provides the parameters required when installing the driver.
+        /// </summary>
+        /// <param name="mobilePlatform">One of the necessary parameters is one of the steps for creating the driver according to the mobile platform.</param>
+        /// <param name="appiumOptions">It is a variable that contains the necessary startup settings.</param>
+        /// <exception cref="ArgumentOutOfRangeException">The exception that is thrown when the value of an argument is outside the allowable range of values as defined by the invoked method.</exception>
+        private static void DriverManager(MobilePlatform mobilePlatform,DriverOptions appiumOptions)
+        {
+            Uri serverUri;
+            switch (mobilePlatform)
             {
-                throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
+                case MobilePlatform.Android:
+                    serverUri = AppiumServers.StartLocalService();
+                    Driver = new AndroidDriver<AppiumWebElement>(serverUri, appiumOptions, Env.InitTimeOutSec);
+                    Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMinutes(1);
+                    Driver.LaunchApp();
+                    break;
+                case MobilePlatform.iOS:
+                    serverUri = AppiumServers.StartLocalService();
+                    Driver = new IOSDriver<AppiumWebElement>(serverUri, appiumOptions, Env.InitTimeOutSec);
+                    Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMinutes(1);
+                    Driver.LaunchApp();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(mobilePlatform), mobilePlatform, null);
             }
         }
 
+        public static void ActionByElement(Commands commands, FindMethod findMethod, string element,string keys=null)
+        {
+            if (Driver == null) throw new NullReferenceException("It receives an error because the required options are not met.");
+            switch (commands)
+            {
+                    
+                case Commands.Click:
+                    switch (findMethod)
+                    {
+                        case FindMethod.ById:
+                            Driver.FindElementById(element).Click();
+                            TestContext.WriteLine($"{DateTime.Now:s} | Click | ById | {element}");
+                            break;
+                        case FindMethod.ByName:
+                            Driver.FindElementByName(element).Click();
+                            TestContext.WriteLine($"{DateTime.Now:s} | Click | ByName | {element}");
+                            break;
+                        case FindMethod.ByAccessibilityId:
+                            Driver.FindElementByAccessibilityId(element).Click();
+                            TestContext.WriteLine($"{DateTime.Now:s} | Click | ByAccessibilityId | {element}");
+                            break;
+                        case FindMethod.ByXPath:
+                            Driver.FindElementByXPath(element).Click();
+                            TestContext.WriteLine($"{DateTime.Now:s} | Click | ByXPath | {element}");
+                            break;
+                        case FindMethod.ByLinkText:
+                            Driver.FindElementByXPath(element).Click();
+                            TestContext.WriteLine($"{DateTime.Now:s} | Click | ByLinkText | {element}");
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(findMethod), findMethod, null);
+                    }
+                    break;
+                case Commands.SendKeys:
+                    break;
+                case Commands.Text:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(commands), commands, null);
+            }
+        }
+
+        public enum Commands
+        {
+            Click,
+            SendKeys,
+            Text
+        }
+
+        public enum FindMethod
+        {
+            ById,
+            ByName,
+            ByAccessibilityId,
+            ByXPath,
+            ByLinkText
+        }
         /// <summary>
         /// Send a sequence of key strokes to an element or Click element at its center point.
         /// </summary>
@@ -106,13 +198,11 @@ namespace AppiumClientMobile.helpers
         /// DriverWithParams.SendElementByAccessibilityId( element , action , keys);
         /// </code>
         /// </example>
-        // ReSharper disable once UnusedMethodReturnValue.Global
-        public static void SendElementByAccessibilityId(string element, string action, string? keys)
+        public static void SendElementByAccessibilityId(string element, string action, string keys=null)
         {
-            CheckDriverNull();
-            // Element Find
-            Debug.Assert(_driver != null, nameof(_driver) + " != null");
-            AppiumWebElement appiumWebElement = _driver.FindElementByAccessibilityId(element);
+            if (Driver == null) throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
+            Debug.Assert(Driver != null, nameof(Driver) + " != null");
+            var appiumWebElement = Driver.FindElementByAccessibilityId(element);
             switch (action)
             {
                 case "click": case "Click":
@@ -146,10 +236,10 @@ namespace AppiumClientMobile.helpers
         /// </example>
         public static string GetElementTextByAccessibilityId(string element)
         {
-            CheckDriverNull();
-            Debug.Assert(_driver != null, nameof(_driver) + " != null");
+            if (Driver == null) throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
+            Debug.Assert(Driver != null, nameof(Driver) + " != null");
             // Element Find
-            AppiumWebElement appiumWebElement = _driver.FindElementByAccessibilityId(element);
+            AppiumWebElement appiumWebElement = Driver.FindElementByAccessibilityId(element);
             string text = appiumWebElement.Text;
             // Element See Action
             TestContext.WriteLine(element + " " + text);
@@ -171,19 +261,19 @@ namespace AppiumClientMobile.helpers
         public static void SwipeScreen(Direction direction)
         {
             TestContext.WriteLine("Swipe Screen(): Direction: " + direction);
-            Debug.Assert(_driver != null, nameof(_driver) + " != null");
+            Debug.Assert(Driver != null, nameof(Driver) + " != null");
             // Animation default time:
             //  - Android: 300 ms
             //  - iOS: 200 ms
             const int animationTime = 300; // ms
             const int pressTime = 200; // ms
-            var optionX = 0;
-            var optionY = 0;
+            int optionX;
+            int optionY;
             // init screen variables
-            Size dimension = _driver.Manage().Window.Size;
+            Size dimension = Driver.Manage().Window.Size;
             // Calculation of X coordinate and Y coordinate on the screen
-            int scrollHeight = (int) (dimension.Height / 2);
-            int scrollWidth = (int) (dimension.Width / 2);
+            int scrollHeight = dimension.Height / 2;
+            int scrollWidth = dimension.Width / 2;
 
             switch (direction)
             {
@@ -209,7 +299,7 @@ namespace AppiumClientMobile.helpers
             // execute swipe using TouchAction
             try
             {
-                new TouchAction(_driver)
+                new TouchAction(Driver)
                     .Press(scrollWidth,scrollHeight)
                     .Wait(pressTime)
                     .MoveTo(optionX,optionY)
@@ -228,7 +318,7 @@ namespace AppiumClientMobile.helpers
             {
                 Thread.Sleep(animationTime);
             }
-            catch (ThreadInterruptedException e)
+            catch (ThreadInterruptedException)
             {
                 // ignore
             }
@@ -251,9 +341,9 @@ namespace AppiumClientMobile.helpers
         public static void ScrollToElement(string element, Offset direction)
         {
             TestContext.WriteLine("Scroll on the: " + element);
-            Debug.Assert(_driver != null, nameof(_driver) + " != null");
+            Debug.Assert(Driver != null, nameof(Driver) + " != null");
             // init element variables
-            var elementor = _driver.FindElementByAccessibilityId(element);
+            var elementor = Driver.FindElementByAccessibilityId(element);
             int elementWidth = elementor.Size.Width;
             int elementHeight = elementor.Size.Height;
             TestContext.WriteLine("Element Size > Width: "+elementWidth+"-Height: " +elementHeight);
@@ -264,11 +354,11 @@ namespace AppiumClientMobile.helpers
             switch (direction)
             {
                 case Offset.Right:
-                    new TouchAction(_driver).Press(calcStartWidth,calcHeight).MoveTo(calcEndWidth,calcHeight).Release().Perform();
+                    new TouchAction(Driver).Press(calcStartWidth,calcHeight).MoveTo(calcEndWidth,calcHeight).Release().Perform();
                     TestContext.WriteLine("Element Scroll > StartX: "+calcStartWidth+ "StartY: " +calcHeight+"-EndX: " +calcEndWidth+"-EndY: " +calcHeight);
                     break;
                 case Offset.Left:
-                    new TouchAction(_driver).Press(calcEndWidth,calcHeight).MoveTo(calcStartWidth,calcHeight).Release().Perform();
+                    new TouchAction(Driver).Press(calcEndWidth,calcHeight).MoveTo(calcStartWidth,calcHeight).Release().Perform();
                     TestContext.WriteLine("Element Scroll > StartX: "+calcEndWidth+ "StartY: " +calcHeight+"-EndX: " +calcStartWidth+"-EndY: " +calcHeight);
                     break;
                 default:
@@ -281,7 +371,6 @@ namespace AppiumClientMobile.helpers
         public static void RunShScript()
         {
             const string command = "sh";
-            var scriptFile = "filepath.sh";
             const string arguments = "filepath.sh";
             var processInfo = new ProcessStartInfo()
             {
@@ -294,8 +383,8 @@ namespace AppiumClientMobile.helpers
             Process process = Process.Start(processInfo) ?? throw new InvalidOperationException();
             while (!process.StandardOutput.EndOfStream)
             {
-                string result = process.StandardOutput.ReadLine() ?? string.Empty;
-                // textcontext
+                string unused = process.StandardOutput.ReadLine() ?? string.Empty;
+                //textContext
             }
             process.WaitForExit();
         }

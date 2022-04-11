@@ -18,10 +18,7 @@ namespace AppiumClientMobile.test.YuruBeIstanbul.Android.Suites
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var caps = Caps.GetAndroidYuruBeIstanbulCapabilities();
-            var server = AppiumServers.StartLocalService();
-            Driver = new AndroidDriver<AppiumWebElement>(server, caps, Env.InitTimeOutSec);
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(45);
+            new DriverWPs(DriverWPs.MobilePlatform.Android, DriverWPs.MobileProject.Ybi, true);
         }
 
         [OneTimeTearDown]

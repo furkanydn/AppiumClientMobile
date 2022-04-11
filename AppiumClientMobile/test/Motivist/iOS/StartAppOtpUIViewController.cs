@@ -15,7 +15,7 @@ namespace AppiumClientMobile.test.iOS
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            var capabilities = Caps.GetIosXcuiTestCapsWithAppPackage();
+            var capabilities = Caps.GetMotivistCapabilities(Caps.Os.iOS,true);
             var serverUri = AppiumServers.StartLocalService();
             _driver = new IOSDriver<IWebElement>(serverUri, capabilities, Env.InitTimeOutSec);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);

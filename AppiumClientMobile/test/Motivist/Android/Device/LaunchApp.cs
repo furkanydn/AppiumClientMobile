@@ -13,10 +13,7 @@ namespace AppiumClientMobile.test.Motivist.Android.Device
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            var capabilities = Caps.GetAndroidUiAutomatorCapsWithAppPackage();
-            var serverUri = AppiumServers.StartLocalService();
-            _driver = new AndroidDriver<IWebElement>(serverUri, capabilities, Env.InitTimeOutSec);
-            _driver.Manage().Timeouts().ImplicitWait = Env.ImplicitTimeoutSec;
+            new DriverWPs(DriverWPs.MobilePlatform.Android, DriverWPs.MobileProject.Motivist, true);
         }
 
         [SetUp]

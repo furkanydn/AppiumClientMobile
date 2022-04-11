@@ -1,7 +1,7 @@
 using AppiumClientMobile.helpers;
 using NUnit.Framework;
+using static AppiumClientMobile.helpers.DriverWPs;
 using static AppiumClientMobile.Properties.AccessibilityIds;
-using static AppiumClientMobile.Enums.GeneralDesiredCaps;
 
 namespace AppiumClientMobile.test.Motivist.Hybrid
 {
@@ -12,7 +12,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void BeforeAll()
         {
             // ReSharper disable once ObjectCreationAsStatement
-            new DriverWithParams(AppiumMobilePlatform, 1);
+            new DriverWPs(MobilePlatform.Android,MobileProject.Motivist,true);
         }
         
         [SetUp]
@@ -34,44 +34,44 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void CheckAbilityToActionsOnMainToolBarComponent()
         {
             // NavigationMainIndex Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_NavigationMain_Index,
                 "Click",
                 null);
             // MainMenuIcon Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_IndexPageMainToolBar_MenuIcon,
                 "Click",
                 null);
             // DrawerNavigationClose Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_MainDrawerNavigation_DrawerNavigationClose,
                 "Click",
                 null);
             // Main UserName GetName
             string userName =
-                DriverWithParams.GetElementTextByAccessibilityId(
+                GetElementTextByAccessibilityId(
                     ComMotivistDevelopment_IndexPageMainToolBar_UserName);
             // Check UserName is not null
             Assert.AreNotEqual(null, userName);
             // MainProfileImage Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_IndexPageMainToolBar_ProfileImage,
                 "Click",
                 null);
             // Header-Back Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_GeneralPages_HeaderBack,
                 "Click",
                 null);
             // MottoList comes here by default, first click on the Announcements due to the id hiding situation.
             // Announcements Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_IndexPageMainToolBar_Announcements,
                 "Click",
                 null);
             // MottoList Click
-            DriverWithParams.SendElementByAccessibilityId(
+            SendElementByAccessibilityId(
                 ComMotivistDevelopment_IndexPageMainToolBar_MottoList,
                 "Click",
                 null);
@@ -83,7 +83,7 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         public void CheckAbilityToActionsOnHorizontalScroll()
         {
             // Motion Events Swipe Right
-            DriverWithParams.SwipeScreen(DriverWithParams.Direction.Down);
+            SwipeScreen(Direction.Down);
         }
         
         [Test, Order(2)]

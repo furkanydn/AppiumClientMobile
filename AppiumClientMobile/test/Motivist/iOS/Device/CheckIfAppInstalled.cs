@@ -4,7 +4,6 @@ using AppiumClientMobile.helpers;
 using AppiumClientMobile.Helpers;
 using AppiumClientMobile.Properties;
 using OpenQA.Selenium.Appium.iOS;
-using static AppiumClientMobile.helpers.Caps;
 
 namespace AppiumClientMobile.test.iOS.Device
 {
@@ -15,7 +14,7 @@ namespace AppiumClientMobile.test.iOS.Device
         [OneTimeSetUp]
         public void BeforeAll()
         {
-            var capabilities = GetIosXcuiTestCapsWithAppPackage();
+            var capabilities = Caps.GetMotivistCapabilities(Caps.Os.iOS,true);
             var serverUri = AppiumServers.StartLocalService();
             _driver = new IOSDriver<IOSElement>(serverUri, capabilities, Env.InitTimeOutSec);
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
