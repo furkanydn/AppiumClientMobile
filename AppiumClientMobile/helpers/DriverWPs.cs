@@ -237,66 +237,6 @@ namespace AppiumClientMobile.helpers
             ByXPath,
             ByLinkText
         }
-        /// <summary>
-        /// Send a sequence of key strokes to an element or Click element at its center point.
-        /// </summary>
-        /// <param name="element">An Accessibility Id selector, finds the first of elements that match the Accessibility Id selector supplied</param>
-        /// <param name="action">Actions of the session to route the command to</param>
-        /// <param name="keys">The sequence of keys to type. An array must be provided. The server should flatten the array items to a single string to be typed</param>
-        /// <returns>IWebElement object so that you can interact that object</returns>
-        /// <example>
-        /// <code>
-        /// DriverWithParams.SendElementByAccessibilityId( element , action , keys);
-        /// </code>
-        /// </example>
-        public static void SendElementByAccessibilityId(string element, string action, string keys=null)
-        {
-            if (Driver == null) throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
-            Debug.Assert(Driver != null, nameof(Driver) + " != null");
-            var appiumWebElement = Driver.FindElementByAccessibilityId(element);
-            switch (action)
-            {
-                case "click": case "Click":
-                    // Element Click
-                    appiumWebElement.Click();
-                    Thread.Sleep(1000);
-                    // Element See Action
-                    TestContext.WriteLine(element + ComMotivistDevelopment_Contexts_ElementClicked);
-                    break;
-                case "sendkeys":  case "SendKeys":
-                    // Element SendKeys
-                    appiumWebElement.SendKeys(keys);
-                    Thread.Sleep(1000);
-                    TestContext.WriteLine(element + 
-                                          ComMotivistDevelopment_Contexts_ElementSendKeys_To + " " +
-                                          keys + " " +
-                                          ComMotivistDevelopment_Contexts_ElementSendKeys_Sended);
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Returns visible text for element
-        /// </summary>
-        /// <param name="element">Accessibility ID of the element to get the text from</param>
-        /// <returns>Returns the visible text for the element.</returns>
-        /// <example>
-        /// <code>
-        /// DriverWithParams.GetElementTextByAccessibilityId( element);
-        /// </code>
-        /// </example>
-        public static string GetElementTextByAccessibilityId(string element)
-        {
-            if (Driver == null) throw new NullReferenceException(ComMotivistDevelopment_Contexts_ElementNotSetted);
-            Debug.Assert(Driver != null, nameof(Driver) + " != null");
-            // Element Find
-            AppiumWebElement appiumWebElement = Driver.FindElementByAccessibilityId(element);
-            string text = appiumWebElement.Text;
-            // Element See Action
-            TestContext.WriteLine(element + " " + text);
-            // Element Return Value
-            return text;
-        }
 
         /// <summary>
         /// Swipe has start and end points. The start point of swipe is most important. The following elements may prevent swipe start: - application interface/menu e.g. header or footer - elements that are waiting tap and do not pass touch to scroll view.
@@ -395,12 +335,12 @@ namespace AppiumClientMobile.helpers
             Debug.Assert(Driver != null, nameof(Driver) + " != null");
             // init element variables
             var elementor = Driver.FindElementByAccessibilityId(element);
-            int elementWidth = elementor.Size.Width;
-            int elementHeight = elementor.Size.Height;
+            var elementWidth = elementor.Size.Width;
+            var elementHeight = elementor.Size.Height;
             TestContext.WriteLine("Element Size > Width: "+elementWidth+"-Height: " +elementHeight);
-            int calcStartWidth = (elementWidth / 10) * 8;
-            int calcHeight = (elementHeight / 2);
-            int calcEndWidth = elementWidth / 10;
+            var calcStartWidth = (elementWidth / 10) * 8;
+            var calcHeight = (elementHeight / 2);
+            var calcEndWidth = elementWidth / 10;
 
             switch (direction)
             {
@@ -431,10 +371,10 @@ namespace AppiumClientMobile.helpers
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
             };
-            Process process = Process.Start(processInfo) ?? throw new InvalidOperationException();
+            var process = Process.Start(processInfo) ?? throw new InvalidOperationException();
             while (!process.StandardOutput.EndOfStream)
             {
-                string unused = process.StandardOutput.ReadLine() ?? string.Empty;
+                var unused = process.StandardOutput.ReadLine() ?? string.Empty;
                 //textContext
             }
             process.WaitForExit();
