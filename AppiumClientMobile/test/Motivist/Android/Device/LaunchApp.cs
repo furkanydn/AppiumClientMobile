@@ -8,11 +8,17 @@ namespace AppiumClientMobile.test.Motivist.Android.Device
 {
     public class LaunchApp
     {
-        private AndroidDriver<IWebElement> _driver;
+        private readonly AndroidDriver<IWebElement> _driver;
+
+        public LaunchApp(AndroidDriver<IWebElement> driver)
+        {
+            _driver = driver;
+        }
 
         [OneTimeSetUp]
         public void BeforeAll()
         {
+            // ReSharper disable once ObjectCreationAsStatement
             new DriverWPs(DriverWPs.MobilePlatform.Android, DriverWPs.MobileProject.Motivist, true);
         }
 

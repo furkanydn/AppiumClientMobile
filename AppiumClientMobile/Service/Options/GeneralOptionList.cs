@@ -71,7 +71,7 @@ namespace AppiumClientMobile.Service.Options
             new KeyValuePair<string, string>("--strict-caps", string.Empty);
 
         // Absolute path to directory Appium can use to manage temporary files, like built-in iOS apps it needs to move around. On *nix/Mac defaults to /tmp, on Windows defaults to C:\Windows\Temp
-        public static KeyValuePair<string, string> TMP(string value) => GetKeyValuePair("--tmp", value);
+        public static KeyValuePair<string, string> Tmp(string value) => GetKeyValuePair("--tmp", value);
 
         // Add exaggerated spacing in logs to help with visual inspection
         public static KeyValuePair<string, string> DebugLogSpacing() =>

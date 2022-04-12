@@ -16,37 +16,38 @@ namespace AppiumClientMobile.Helpers
         {
             get
             {
-                if(_localService == null)
+                switch (_localService)
                 {
-                    var builder =
-                        new AppiumServiceBuilder()
-                        .WithLogFile(new FileInfo(Path.GetTempPath() + "Log.txt"));
-
-                    _localService = builder.Build();
+                    case null:
+                    {
+                        var builder =
+                            new AppiumServiceBuilder()
+                                .WithLogFile(new FileInfo(Path.GetTempPath() + "Log.txt"));
+                        _localService = builder.Build();
+                        break;
+                    }
                 }
-                if (!_localService.IsRunning)
-                {
-                    _localService.Start();
-                }
+                if (_localService.IsRunning) return _localService.ServiceUrl;
+                _localService.Start();
 
                 return _localService.ServiceUrl;
             }
+            set => throw new NotImplementedException();
         }
+
         public static Uri RemoteServerUri
         {
             get
             {
-                if (_remoteAppiumServerUri == null)
-                {
-                    _remoteAppiumServerUri = new Uri(Env.GetEnvVar("remoteAppiumServerUri"));
-                } else
-                {
+                if (_remoteAppiumServerUri != null)
                     return _remoteAppiumServerUri;
-                }
+                _remoteAppiumServerUri = new Uri(Env.GetEnvVar("remoteAppiumServerUri"));
 
                 return _remoteAppiumServerUri;
             }
+            set => throw new NotImplementedException();
         }
+
         public static void StopLocalService()
         {
             if (!(_localService is {IsRunning: true})) return;

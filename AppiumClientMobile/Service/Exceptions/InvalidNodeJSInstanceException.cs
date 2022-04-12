@@ -4,14 +4,14 @@ using System.Text;
 
 namespace AppiumClientMobile.Service.Exceptions
 {
-    public class InvalidNodeJSInstanceException : Exception
+    public class InvalidNodeJsInstanceException : Exception
     {
-        public InvalidNodeJSInstanceException(string message, Exception exception) : base(message, exception)
+        public InvalidNodeJsInstanceException(string message, Exception exception) : base(message, exception)
         {
 
         }
 
-        public InvalidNodeJSInstanceException(string message) : base(message)
+        public InvalidNodeJsInstanceException(string message) : base(message)
         {
 
         }

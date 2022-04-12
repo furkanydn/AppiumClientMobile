@@ -4,14 +4,14 @@ using System.Text;
 
 namespace AppiumClientMobile.Service.Exceptions
 {
-    public class AppiumServerHasNotBeenStartedLocallyException : Exception
+    public abstract class AppiumServerHasNotBeenStartedLocallyException : Exception
     {
-        public AppiumServerHasNotBeenStartedLocallyException(string message, Exception exception) : base(message, exception)
+        protected AppiumServerHasNotBeenStartedLocallyException(string message, Exception exception) : base(message, exception)
         {
 
         }
 
-        public AppiumServerHasNotBeenStartedLocallyException(string message) : base(message)
+        protected AppiumServerHasNotBeenStartedLocallyException(string message) : base(message)
         {
 
         }

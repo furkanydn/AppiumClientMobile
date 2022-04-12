@@ -3,7 +3,7 @@ using static AppiumClientMobile.Properties.Capabilities;
 
 namespace AppiumClientMobile.Enums
 {
-    public class GeneralDesiredCaps
+    public static class GeneralDesiredCaps
     {
         // public static readonly string AppPathAndroid = @"C:\Users\FurkanAYDIN\source\repos\AppiumClientMobile\AppiumClientMobile\Resources\motivistv5.apk";
 
@@ -27,11 +27,5 @@ namespace AppiumClientMobile.Enums
         public static readonly string WdaBaseUrl = GeneralCapabilities_Ios_WdaBaseUrl;
         
         public static readonly byte AppiumMobilePlatform = Convert.ToByte(GeneralCapabilities_Hybrid_MobilePlatform);
-    }
-
-    /// <inheritdoc />
-    internal class GeneralDesiredCapsImpl : GeneralDesiredCaps
-    {
-        
     }
 }

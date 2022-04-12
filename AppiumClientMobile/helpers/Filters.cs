@@ -1,47 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OpenQA.Selenium;
 
 namespace AppiumClientMobile.helpers
 {
     public class Filters
     {
-        public static IWebElement FirstWithName<TW>(IList<TW> els, string name) where TW : IWebElement
+        public static IWebElement FirstWithName<TW>(IEnumerable<TW> els, string name) where TW : IWebElement
         {
-            for (var i = 0; i < els.Count; i++)
-            {
-                if (els[i].GetAttribute("name") == name)
-                {
-                    return els[i];
-                }
-            }
+            foreach (var t in els)
+                if (t.GetAttribute("name") == name)
+                    return t;
+
             return null;
         }
 
-        public static IList<IWebElement> FilterWithName<TW>(IList<TW> els, string name) where TW : IWebElement
+        public static IList<IWebElement> FilterWithName<TW>(IEnumerable<TW> els, string name) where TW : IWebElement
         {
-            var res = new List<IWebElement>();
-            for (var i = 0; i < els.Count; i++)
-            {
-                if (els[i].GetAttribute("name") == name)
-                {
-                    res.Add(els[i]);
-                }
-            }
-            return res;
+            return els.Where(t => t.GetAttribute("name") == name).Cast<IWebElement>().ToList();
         }
 
         public static IList<IWebElement> FilterDisplayed<TW>(IList<TW> els) where TW : IWebElement
         {
-            var res = new List<IWebElement>();
-            for (var i = 0; i < els.Count; i++)
-            {
-                IWebElement el = els[i];
-                if (els[i].Displayed)
-                {
-                    res.Add(els[i]);
-                }
-            }
-            return res;
+            return (from t in els let el = t where t.Displayed select t).Cast<IWebElement>().ToList();
         }
     }
 }

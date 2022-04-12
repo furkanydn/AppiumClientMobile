@@ -6,7 +6,7 @@ namespace AppiumClientMobile.Service.Exceptions
 {
     public class InvalidServerInstanceException : Exception
     {
-        private static readonly string Prefix = "Geçersiz sunucu örneği istisnası oluştu: ";
+        private const string Prefix = "Geçersiz sunucu örneği istisnası oluştu: ";
 
         public InvalidServerInstanceException(string message, Exception exception) : base($"{Prefix}{message}", exception)
         {

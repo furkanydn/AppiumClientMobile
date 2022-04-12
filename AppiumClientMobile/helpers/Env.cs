@@ -49,11 +49,9 @@ namespace AppiumClientMobile.helpers
         }
         public static string GetEnvVar(string name)
         {
-            if(_env.ContainsKey(name) && (_env[name] != null))
-            {
-                return _env[name];
-            }
-            return Environment.GetEnvironmentVariable(name);
+            return _env.ContainsKey(name) && (_env[name] != null)
+                ? _env[name]
+                : Environment.GetEnvironmentVariable(name);
         }
     }
 }

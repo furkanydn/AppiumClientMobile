@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium.Appium.Enums;
-
-namespace AppiumClientMobile.Enums
+﻿namespace AppiumClientMobile.Enums
 {
     public static class AutomationEngineName
     {

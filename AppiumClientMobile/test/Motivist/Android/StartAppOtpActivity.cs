@@ -44,7 +44,7 @@ namespace AppiumClientMobile.test.Motivist.Android
                 .SendKeys(number);
         }
 
-        private void SetImplicitWaitTimeoutWithDesiredValueSeconds(double waitTime)
+        private static void SetImplicitWaitTimeoutWithDesiredValueSeconds(double waitTime)
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitTime);
         }
@@ -52,8 +52,8 @@ namespace AppiumClientMobile.test.Motivist.Android
         [Test, Order(0)]
         public void CheckAbilityToEnterNumberScreen()
         {
-            string currentActivity = _driver.CurrentActivity;
-            Debug.Print(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_Current_Activity__ +
+            var currentActivity = _driver.CurrentActivity;
+            TestContext.WriteLine(StartAppOtpActivity_CheckAbilityToEnterNumberScreen_Current_Activity__ +
                         currentActivity);
             // Activate
             SendPhoneNumberToRequiredField(ComMotivistDevelopment_CheckAbilityToEnterNumberScreen_EnteredNumber);

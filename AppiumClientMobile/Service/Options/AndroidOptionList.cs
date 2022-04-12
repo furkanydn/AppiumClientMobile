@@ -19,8 +19,5 @@ namespace AppiumClientMobile.Service.Options
 
         public static KeyValuePair<string, string> ChromeDriverPort(string value) =>
             GetKeyValuePairUsingDefaultValue("--chromedriver-port", value, "9515");
-
-        public static KeyValuePair<string, string> ChromeDriverExetable(string value) =>
-            GetKeyValuePair("--chromedriver-executable	", value);
     }
 }
