@@ -9,10 +9,10 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
     [TestFixture, Order(0)]
     public class OtpActivity
     {
-        // ReSharper disable once UnusedMember.Global
         private protected TestContext TestContext { get; set; }
 
         [OneTimeSetUp]
+        // ReSharper disable once ObjectCreationAsStatement
         public void BeforeAll() => new DriverWPs(MobilePlatform.Android, MobileProject.Motivist, true);
 
         [Test, Order(0)]
@@ -30,31 +30,18 @@ namespace AppiumClientMobile.test.Motivist.Hybrid
         [Test, Order(1)]
         public void CheckAbilityToReadOtpCodeFromOtpScreen()
         {
-            // OtpTextInput Read
-            // ReSharper disable once SuggestVarOrType_BuiltInTypes
-            string dialogMessage = GetElementTextByAccessibilityId(
+            var dMessage = ActionByElement(Commands.Text, FindMethod.ByAccessibilityId,
                 ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage);
-            // If an error message appears instead of the otp code, check
-            if (dialogMessage == ComMotivistDevelopment_OtpDialogView_ErrorMessageText)
-            {
-                TestContext.WriteLine(ComMotivistDevelopment_CheckAbilityToGetThreeMinutesError_WaitMessage);
-            }
-            // OtpDialog Close
-            SendElementByAccessibilityId(
-                ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton,
-                "Click", 
-                null);
-            
-            // OtpField Write
-            SendElementByAccessibilityId(
-                ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText,
-                "SendKeys",
-                dialogMessage);
-            // LoginOtpVerify Click
-            SendElementByAccessibilityId(
-                ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify,
-                "Click",
-                null);
+            Assert.That(
+                ActionByElement(Commands.Text, FindMethod.ByAccessibilityId,
+                    ComMotivistDevelopment_CheckAbilityToWriteOtpCodeInsideTextArea_DialogTextMessage),
+                Is.Not.EqualTo(ComMotivistDevelopment_OtpDialogView_ErrorMessageText));
+            ActionByElement(Commands.Click, FindMethod.ByAccessibilityId,
+                ComMotivistDevelopment_CheckFromMessageDialog_DialogNegativeButton);
+            ActionByElement(Commands.SendKeys, FindMethod.ByAccessibilityId,
+                ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_OtpEditText, dMessage);
+            ActionByElement(Commands.Click, FindMethod.ByAccessibilityId,
+                ComMotivistDevelopment_CheckAbilityToOtpEnterOtpCodeScreen_LoginOtpVerify);
             TestContext.WriteLine(ComMotivistDevelopment_Contexts_CorrectLoginMessage);
         }
     }

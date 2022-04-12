@@ -4,6 +4,11 @@
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/5.0.0-alpha/lib/netstandard2.0/Appium.Net.dll" /&gt;
   &lt;Assembly Path="/Users/furkanaydin/.nuget/packages/appium.webdriver/4.3.1/lib/netstandard2.0/Appium.Net.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=71ca4504_002Db80d_002D4559_002D82b3_002Df0034c870ad2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GlobalSuite" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::59E5E08C-BDA3-4A06-9567-56D066377DCF::.NETCoreApp,Version=v3.1::AppiumClientMobile.test.YuruBeIstanbul.Android.Suites.GlobalSuite&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	
